@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Landing Page</title>
+  <title>ElfBot Scripts</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
@@ -24,7 +24,7 @@
   <aside class="menu white-bg">
     <div class="main-content menu-content">
       <h1>
-        <a href="#home">ELFBOT STUFF</a>
+        <a href="#home">ELFBOT SCRIPTS</a>
       </h1>
 
       <nav>
@@ -33,6 +33,8 @@
           <li><a href="#cavebot">Cavebot</a></li>
           <li><a href="#hud">HUD</a></li>
           <li><a href="#download">Downloads</a></li>
+          <li><a href="https://elfbotscripts.freeforums.net/thread/2/all-actions-conditions?page=1&scrollTo=2">Conditions</a></li>
+          <li><a href="https://elfbotscripts.freeforums.net/thread/49/list-variables-elfbot?page=1&scrollTo=49">Variables</a></li>
         </ul>
       </nav>
     </div>
@@ -54,7 +56,8 @@
   </section>
   <section id="hotkeys" class="main-bg section">
     <h2 style=text-align:center;>Hotkeys</h2>
-    <h3 style=text-align:center;font-size:2rem> All the hotkeys listed below can be adapted or modified.</h3>
+     <p style=text-align:center;>All the hotkeys listed below can be adapted or modified.
+    <br>Scroll to see the full content.</p>
     <br>
     <div class="main-content top3-content">
       <p>Haste</p>
@@ -122,11 +125,12 @@
 
       <div class="grid">
         <article>
+            
           <h3>NPC Talk Travel</h3>
           <div class="code-box2">
-            <p>Say hi
-            Wait 1000
-            Npcsay Carlin
+            <p>Say hi<br>
+            Wait 1000<br>
+            Npcsay Carlin<br>
             Wait 1000</p>
         </div>
         </article>
@@ -134,15 +138,15 @@
           <h3>NPC Buy Potions</h3>
           <div class="code-box2">
             <p>1:
-                Say hi
-                Wait 1000
-                Npcsay trade
-                Wait 1000
-                2:
-                set $i '238'
-                Countitems '$i'
-                 Wait 500
-                 if [$count < 600] {buyitems $i 100 | wait 300 | gotolabel 'buymana'}    
+                Say hi<br>
+                Wait 1000<br>
+                Npcsay trade<br>
+                Wait 1000<br>
+                2:<br>
+                set $i '238'<br>
+                Countitems '$i'<br>
+                 Wait 500<br>
+                 if [$count < 600] {buyitems $i 100 | wait 300 | gotolabel 'buymana'}<br> 
                  gotolabel 'smanadone'
             </p>
         </div>
@@ -150,18 +154,18 @@
         <article>
           <h3>NPC Sell Loot</h3>
           <div class="code-box2">
-        <p>{ npcsay 'hi' | npcsay 'trade' | wait 1000 | end }
-            { wait 1000 | countitems 3392 | wait 1000 }
-            { sellitems 3392 $count | end }
-            { wait 1000 | countitems 3393 | wait 1000 }
+        <p>{ npcsay 'hi' | npcsay 'trade' | wait 1000 | end }<br>
+            { wait 1000 | countitems 3392 | wait 1000 }<br>
+            { sellitems 3392 $count | end }<br>
+            { wait 1000 | countitems 3393 | wait 1000 }<br>
             { sellitems 3393 $count | end } npcsay 'bye'</p>
         </div>
         </article>
         <article>
             <h3>Check Potions</h3>
             <div class="code-box2">
-          <p>countitems 7643 | wait 200 | set $uhp $count | countitems 268 | wait 200 | set $mpot $count
-            if [$uhp =< 200 || $mpot =< 400] {gotolabel refil}
+          <p>countitems 7643 | wait 200 | set $uhp $count | countitems 268 | wait 200 | set $mpot $count<br>
+            if [$uhp =< 200 || $mpot =< 400] {gotolabel refil}<br>
             else {gotolabel inicio}</p>
           </div>
           </article>
@@ -174,25 +178,25 @@
           <article>
             <h3>Check SD</h3>
             <div class="code-box2">
-          <p>countitems 3155 | wait 200 | set $sdrune $count
-            if [$sdrune =< 300] {gotolabel refil}
+          <p>countitems 3155 | wait 200 | set $sdrune $count<br>
+            if [$sdrune =< 300] {gotolabel refil}<br>
             else {gotolabel hunt}</p>
           </div>
           </article>
           <article>
             <h3>Open BP</h3>
             <div class="code-box2">
-          <p>closeallwindows
-            wait 2000
-            openbpitem
-            wait 2000
+          <p>closeallwindows<br>
+            wait 2000<br>
+            openbpitem<br>
+            wait 2000<br>
             openitemnew 9602 1 00</p>
           </div>
           </article>
           <article>
             <h3>Move Potions to BP</h3>
             <div class="code-box2">
-          <p>auto 200 moveitems 268 2868
+          <p>auto 200 moveitems 268 2868<br>
              auto 200 moveitems 7643 2867</p>
           </div>
           </article>
@@ -251,12 +255,12 @@
                 auto 500 dontlist | setpos [$screenright + 10] [$screentop - 450] | displaytext 'Shielding:' | setcolor 255 255 255
                 auto 500 dontlist | setpos [$screenright + 110] [$screentop - 450] | displaytext '$formatnum.$skillpc.shielding / 100 %' | setcolor 255 255 255
                 auto 500 dontlist | setpos [$screenright + 70] [$screentop - 450] | setcolor 010 250 025 |if [$formattime.$skilltime.club == 99:99:99] {displaytext $skill.shielding}</p>
+
+
         </div>
         </div>
     </div>
   </section>
-
-
   <section id="download" class="intro main-bg section">
     <div class="main-content intro-content">
       <div class="intro-text-content">
@@ -270,14 +274,20 @@
             <button type="button" class="botao-download"><a href="https://mega.nz/file/mok3xATA#XMmJVlJh1RXFImSqWYTkqG_y--QI1o0UPKNF9HxCQPY">Windows 10 Fix*</button>
             <br>
             <p>*If you are using Windows 10, use this file to replace the old elfbot.dll file in your ElfBot folder in order to make hotkeys like Shift + F11 or Shift + F12 function properly again.</p> 
-
         </div>
-      <div class="intro-img">
+      <div class="intro-img2">
         <img src="img/download.svg" alt="Download Elfbot with Crack">
- 
     </div>
   </section>
-
+  <footer class="footer">
+    <div align:center; class="footer-content">
+        <h6 style=font-size:1.5rem;>
+            <p>This is a simple website developed just study.
+             Feel Free to use all scripts containing in here.</p>
+                Made by Victor Schiavinato.
+            </h6>
+    </div>
+  </footer>
 
 </body>
 
