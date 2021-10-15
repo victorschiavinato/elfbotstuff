@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/elements.css">
+  <link rel="stylesheet" href="css/classes.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/form.css">
+  <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+<body class="main-bg">
+  <aside class="menu white-bg">
+    <div class="main-content menu-content">
+      <h1>
+        <a href="#home">ELFBOT STUFF</a>
+      </h1>
+
+      <nav>
+        <ul>
+          <li><a href="#hotkeys">Hotkeys</a></li>
+          <li><a href="#cavebot">Cavebot</a></li>
+          <li><a href="#hud">HUD</a></li>
+          <li><a href="#download">Downloads</a></li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+
+  <div class="menu-spacing"></div>
+
+  <section id="intro" class="intro main-bg section">
+  <section id="home" class="intro main-bg section">
+    <div class="main-content intro-content">
+      <div class="intro-text-content">
+        <h2>Scripts, Cavebots and Stuffs for Elfbot 8.6</h2>
+        <p>This is a single page with multiple sections, use Ctrl+F to find what you are looking for.</p>
+      </div>
+      <div class="intro-img">
+        <img src="img/firstimg.svg" alt="Logo de HTML, CSS e JS.">
+      </div>
+    </div>
+  </section>
+  <section id="hotkeys" class="main-bg section">
+    <h2 style=text-align:center;>Hotkeys</h2>
+    <h3 style=text-align:center;font-size:2rem> All the hotkeys listed below can be adapted or modified.</h3>
+    <br>
+    <div class="main-content top3-content">
+      <p>Haste</p>
+      <div class="code-box">auto 1000 dontlist | if [$hasted == 0 && $inpz == 0] {say 'utani hur' | wait 1000 }</div>
+      <h6>Only use Hast if you are not in Pz.</h6>
+      <br>
+      <p>Eat Food</p>
+      <div class="code-box">auto 60000 dontlist |  if [$inpz == 0] { eatfood }</div>
+      <h6>Only eat food outsite Pz.</h6>
+      <br>
+      <p>Fast Hand</p>
+      <div class="code-box">auto 1 collectitems 'Expedition Backpack'  8097 3043 3040 9018 6526 3368 3021 5794 </div>
+      <h6>Change the name of your Backpack and add the items ID you want.</h6>
+      <br>
+      <p>Reconnect</p>
+      <div class="code-box">auto 200 | dontlist | if [$hp == 0] {reconnect | set $died 1 | wait 400 | say '!bless'} | if [$died == 1] {gotolabel temple | set $died '0'}</div>
+      <h6>Reconnect and go to a label 'x' (You must set that label in your cavebot).</h6>
+      <br>
+      <p>Leave cave if attacked</p>
+      <div class="code-box">auto 200 | listas 'Pk' | ifplayerattacking {stopattack | settargeting off | gotolabel 'pk' | end}</div>
+      <h6>Go to a label 'x' if a player attack you(You must set that label in your cavebot).</h6> 
+      <br>
+       <p>Self Potion</p>    
+       <div class="code-box">auto 100 if [$hppc <= 70] useoncreature 7642 self
+        auto 100 if [$mppc <= 70] useoncreature 237 self</div> 
+        <h6>Go to a label 'x' if a player attack you(You must set that label in your cavebot).</h6>
+        <br>
+       <p>Refil Soft Boots</p>    
+       <div class="code-box">auto 200 if [$itemcount.6530 == 1] say '!soft'</div>     
+       <br>
+       <p>Change gold</p>    
+       <div class="code-box">auto 200 | listas 'Crystalcoins - Gold Nugget' | stackitems | if [ $itemcount.3043 >= 100 ] equipbelt 3043 | if [$beltslot.id == 3043 && $beltslot.count == 100] useitem 3043
+        auto 200 | listas 'Platinum coin- Crystalcoins' | stackitems | if [ $itemcount.3035 >= 100 ] equipbelt 3035 | if [$beltslot.id == 3035 && $beltslot.count == 100] useitem 3035</div>
+       <br>
+       <p>UE Hunt</p>    
+       <div class="code-box">auto 100 if [$playersaround.10 == 0 && $monstersaround.1 >= 2] { istargeting say 'Exori Gran' } | if [$playersaround.10 >= 1] { istargeting say 'Exori hur'}</div>  
+       <br>
+       <p>Blessed Wooden Stake</p>    
+       <div class="code-box">auto 500 if [$monstersaround.7 => 0] {stake 7 5995 | loop}</div>  
+       <br>
+       <p>Mana Training</p>    
+       <div class="code-box">auto 500 if [$mppc >90] say 'Exori gran'</div>  
+       <br>
+       <p>Auto Manashield / Invisible</p>    
+       <div class="code-box">auto 500 manashield
+           auto 500 goinvisible
+       </div>  
+       <br> 
+       <p>Custom Spell</p>    
+       <div class="code-box">auto 250 isattacking say 'exori gran san'</div>  
+       <br>
+       <p>Mana Training</p>    
+       <div class="code-box">auto 500 if [$mppc >90] say 'Exori gran'</div>  
+       <br>
+
+
+    </div>
+  </section>
+
+
+  <section id="cavebot" class="grid-one main-bg section">
+    <div class="main-content grid-one-content">
+      <h2 class="grid-main-heading">Cavebot</h2>
+      <p class="grid-description">Some useful cavebots scripts.</p>
+
+      <div class="grid">
+        <article>
+          <h3>NPC Talk Travel</h3>
+          <div class="code-box2">
+            <p>Say hi
+            Wait 1000
+            Npcsay Carlin
+            Wait 1000</p>
+        </div>
+        </article>
+        <article>
+          <h3>NPC Buy Potions</h3>
+          <div class="code-box2">
+            <p>1:
+                Say hi
+                Wait 1000
+                Npcsay trade
+                Wait 1000
+                2:
+                set $i '238'
+                Countitems '$i'
+                 Wait 500
+                 if [$count < 600] {buyitems $i 100 | wait 300 | gotolabel 'buymana'}    
+                 gotolabel 'smanadone'
+            </p>
+        </div>
+        </article>
+        <article>
+          <h3>NPC Sell Loot</h3>
+          <div class="code-box2">
+        <p>{ npcsay 'hi' | npcsay 'trade' | wait 1000 | end }
+            { wait 1000 | countitems 3392 | wait 1000 }
+            { sellitems 3392 $count | end }
+            { wait 1000 | countitems 3393 | wait 1000 }
+            { sellitems 3393 $count | end } npcsay 'bye'</p>
+        </div>
+        </article>
+        <article>
+            <h3>Check Potions</h3>
+            <div class="code-box2">
+          <p>countitems 7643 | wait 200 | set $uhp $count | countitems 268 | wait 200 | set $mpot $count
+            if [$uhp =< 200 || $mpot =< 400] {gotolabel refil}
+            else {gotolabel inicio}</p>
+          </div>
+          </article>
+          <article>
+            <h3>Check Cap</h3>
+            <div class="code-box2">
+          <p>if [$cap =< 2000] {gotolabel 'refil' wait 500}</p>
+          </div>
+          </article>
+          <article>
+            <h3>Check SD</h3>
+            <div class="code-box2">
+          <p>countitems 3155 | wait 200 | set $sdrune $count
+            if [$sdrune =< 300] {gotolabel refil}
+            else {gotolabel hunt}</p>
+          </div>
+          </article>
+          <article>
+            <h3>Open BP</h3>
+            <div class="code-box2">
+          <p>closeallwindows
+            wait 2000
+            openbpitem
+            wait 2000
+            openitemnew 9602 1 00</p>
+          </div>
+          </article>
+          <article>
+            <h3>Move Potions to BP</h3>
+            <div class="code-box2">
+          <p>auto 200 moveitems 268 2868
+             auto 200 moveitems 7643 2867</p>
+          </div>
+          </article>
+          
+      </div>
+    </div>
+  </section>
+
+  <section id="hud" class="grid-one main-bg section">
+    <div class="main-content grid-one-content">
+      <h2 class="grid-main-heading">HUD</h2>
+      <p class="grid-description">Some HUD Scripts</p>
+      <h3 style=font-size:2rem;> Player Information right side.</h3>
+
+        <div class="grid">
+        <div class="code-box3">
+            <img src="img\hud.jpg" alt="Teste" width="360px" height="360px" style="border:solid 1px white;">
+            <p>auto 500 dontlist | setpos [$screenright + 10] [$screentop - 35] | displaytext 'Target Information:' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 55] | displaytext 'Target Name:' | setcolor 255 255 255 
+                auto 500 dontlist | setpos [$screenright + 95] [$screentop - 55] | displaytext '$target.name' | setcolor 010 250 025
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 75] | displaytext 'Target HP: % $target.hppc' | setcolor 255 000 000
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 95] | displaytext 'Target MP: % $target.mppc' | setcolor 0 250 250
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 115] | displaytext '---------------------' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 130] | displaytext 'Player Information:' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 150] | displaytext 'Name:' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 55] [$screentop - 150] | displaytext '$name' | setcolor 010 250 025
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 170] | displaytext 'Level:' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 55] [$screentop - 170] | displaytext '$level' | setcolor 010 250 025
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 210] | displaytext 'Mana:' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 85] [$screentop - 210] | displaytext '( %$mppc )' | setcolor 0 250 250
+                auto 500 dontlist | setpos [$screenright + 55] [$screentop - 210] | displaytext '$mp' | setcolor 0 250 250
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 190] | displaytext 'Health:' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 55] [$screentop - 190] | displaytext '$hp' | setcolor 255 0 0
+                auto 500 dontlist | setpos [$screenright + 85] [$screentop - 190] | displaytext '( %$hppc )' | setcolor 255 0 0
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 230] | displaytext 'Speed:' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 55] [$screentop - 230] | displaytext '$self.speed' | setcolor 255 153 51 
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 250] | displaytext 'Time Online:' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 85] [$screentop - 250] | displaytext '$formattime.$deltatime.' | setcolor 255 153 51 
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 270] | displaytext '---------------------' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 290] | displaytext '---------Level--------' | setcolor 010 250 025
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 310] | displaytext 'Time to Next level:' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 125] [$screentop - 310] | displaytext '$formattime.$timetnl' | setcolor 192 192 192
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 330] | displaytext 'Exp to level:' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 90] [$screentop - 330] | displaytext '$formatnum.$exptnl' | setcolor 192 192 192
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 350] | displaytext 'Exp p/ hour:' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 90] [$screentop - 350] | displaytext '$formatnum.$exph' | setcolor 192 192 192
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 370] | displaytext 'Stamina:' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 90] [$screentop - 370] | if [$stamina <= '850'] {setcolor 250 0 0} | else setcolor 150 150 0 | displaytext '$formattime.$stamina' | if [$stamina <= 850] statusmessage 'RECHARGE your stamina!! $formattime.$stamina Remaining!!!' | if [$stamina <= 850] say 'RECHARGE your stamina!! $formattime.$stamina Remaining!!!' | wait 10000
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 390] | displaytext '---------------------' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 410] | displaytext 'Magic lvl:' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 110] [$screentop - 410] | displaytext '$formatnum.$skillpc.mlevel / 100 %' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 70] [$screentop - 410] | setcolor 010 250 025 | {displaytext $skill.mlevel}
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 430] | displaytext 'Distance:' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 110] [$screentop - 430] | displaytext '$formatnum.$skillpc.distance / 100 %' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 70] [$screentop - 430] | setcolor 010 250 025 |if [$formattime.$skilltime.club == 99:99:99] {displaytext $skill.distance}
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 450] | displaytext 'Shielding:' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 110] [$screentop - 450] | displaytext '$formatnum.$skillpc.shielding / 100 %' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 70] [$screentop - 450] | setcolor 010 250 025 |if [$formattime.$skilltime.club == 99:99:99] {displaytext $skill.shielding}</p>
+
+
+        </div>
+
+        
+
+
+
+
+
+        </div>
+    </div>
+  </section>
+
+
+  <section id="download" class="intro main-bg section">
+    <div class="main-content intro-content">
+      <div class="intro-text-content">
+        <h2 style=font-size:5rem;>Downloads</h2>
+        <p > <b style=font-size:3rem;>⚠ Warning</b><br> We are not the owners of these programs, download at own risk.</p>
+        <br>
+            <button type="button" class="botao-download"><a href="https://mega.nz/file/i9ll0SIA#Hl0x9RLTyei-DKIAv-Uxxr4yIZnHWzyYRlIZGzR_Nvc">Elfbot</button>
+            <br>
+            <button type="button" class="botao-download"><a href="https://mega.nz/file/elsRmQZb#acsQ5d-4niliOOyX2q8VGBoD37JVIVpwmfJGz0Z3CNY">Crack Elfbot</button>
+            <br>
+            <button type="button" class="botao-download"><a href="https://mega.nz/file/mok3xATA#XMmJVlJh1RXFImSqWYTkqG_y--QI1o0UPKNF9HxCQPY">Windows 10 Fix*</button>
+            <br>
+            <p>*If you are using Windows 10, use this file to replace the old elfbot.dll file in your ElfBot folder in order to make hotkeys like Shift + F11 or Shift + F12 function properly again.</p> 
+
+        </div>
+      <div class="intro-img">
+        <img src="img/download.svg" alt="Download Elfbot with Crack">
+ 
+    </div>
+  </section>
+
+
+</body>
+
+</html> 
