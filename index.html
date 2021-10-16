@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +17,6 @@
   <link rel="stylesheet" href="css/menu.css">
   <link rel="stylesheet" href="css/form.css">
   <link rel="stylesheet" href="css/style.css">
-
 
 </head>
 <body class="main-bg">
@@ -49,6 +48,8 @@
       <div class="intro-text-content">
         <h2>Scripts, Cavebots and Stuffs for Elfbot 8.6</h2>
         <p>This is a single page with multiple sections, use Ctrl+F to find what you are looking for.</p>
+        <br>
+        <p>Use the top menu to scroll thru sections.</p>
       </div>
       <div class="intro-img">
         <img src="img/firstimg.svg" alt="Logo de HTML, CSS e JS.">
@@ -81,38 +82,37 @@
       <div class="code-box">auto 200 | listas 'Pk' | ifplayerattacking {stopattack | settargeting off | gotolabel 'pk' | end}</div>
       <h6>Go to a label 'x' if a player attack you(You must set that label in your cavebot).</h6> 
       <br>
-       <p>Self Potion</p>    
-       <div class="code-box">auto 100 if [$hppc <= 70] useoncreature 7642 self
+      <p>Self Potion</p>    
+      <div class="code-box">auto 100 if [$hppc <= 70] useoncreature 7642 self
         auto 100 if [$mppc <= 70] useoncreature 237 self</div> 
-        <h6>Go to a label 'x' if a player attack you(You must set that label in your cavebot).</h6>
-        <br>
-       <p>Refil Soft Boots</p>    
-       <div class="code-box">auto 200 if [$itemcount.6530 == 1] say '!soft'</div>     
-       <br>
-       <p>Change gold</p>    
-       <div class="code-box">auto 200 | listas 'Crystalcoins - Gold Nugget' | stackitems | if [ $itemcount.3043 >= 100 ] equipbelt 3043 | if [$beltslot.id == 3043 && $beltslot.count == 100] useitem 3043
+      <br>
+      <p>Refil Soft Boots</p>    
+      <div class="code-box">auto 200 if [$itemcount.6530 == 1] say '!soft'</div>     
+      <br>
+      <p>Change gold</p>    
+      <div class="code-box">auto 200 | listas 'Crystalcoins - Gold Nugget' | stackitems | if [ $itemcount.3043 >= 100 ] equipbelt 3043 | if [$beltslot.id == 3043 && $beltslot.count == 100] useitem 3043
         auto 200 | listas 'Platinum coin- Crystalcoins' | stackitems | if [ $itemcount.3035 >= 100 ] equipbelt 3035 | if [$beltslot.id == 3035 && $beltslot.count == 100] useitem 3035</div>
-       <br>
-       <p>UE Hunt</p>    
-       <div class="code-box">auto 100 if [$playersaround.10 == 0 && $monstersaround.1 >= 2] { istargeting say 'Exori Gran' } | if [$playersaround.10 >= 1] { istargeting say 'Exori hur'}</div>  
-       <br>
-       <p>Blessed Wooden Stake</p>    
-       <div class="code-box">auto 500 if [$monstersaround.7 => 0] {stake 7 5995 | loop}</div>  
-       <br>
-       <p>Mana Training</p>    
-       <div class="code-box">auto 500 if [$mppc >90] say 'Exori gran'</div>  
-       <br>
-       <p>Auto Manashield / Invisible</p>    
-       <div class="code-box">auto 500 manashield
+      <br>
+      <p>UE Hunt</p>    
+      <div class="code-box">auto 100 if [$playersaround.10 == 0 && $monstersaround.1 >= 2] { istargeting say 'Exori Gran' } | if [$playersaround.10 >= 1] { istargeting say 'Exori hur'}</div>  
+      <br>
+      <p>Blessed Wooden Stake</p>    
+      <div class="code-box">auto 500 if [$monstersaround.7 => 0] {stake 7 5995 | loop}</div>  
+      <br>
+      <p>Mana Training</p>    
+      <div class="code-box">auto 500 if [$mppc >90] say 'Exori gran'</div>  
+      <br>
+      <p>Auto Manashield / Invisible</p>    
+      <div class="code-box">auto 500 manashield
            auto 500 goinvisible
-       </div>  
-       <br> 
-       <p>Custom Spell</p>    
-       <div class="code-box">auto 250 isattacking say 'exori gran san'</div>  
-       <br>
-       <p>Mana Training</p>    
-       <div class="code-box">auto 500 if [$mppc >90] say 'Exori gran'</div>  
-       <br>
+      </div>  
+      <br> 
+      <p>Custom Spell</p>    
+      <div class="code-box">auto 250 isattacking say 'exori gran san'</div>  
+      <br>
+      <p>Mana Training</p>    
+      <div class="code-box">auto 500 if [$mppc >90] say 'Exori gran'</div>  
+      <br>
 
 
 
@@ -294,53 +294,57 @@
     <div class="main-content grid-one-content">
       <h2 class="grid-main-heading">HUD</h2>
       <p class="grid-description">Some HUD Scripts</p>
-      <h3 style=font-size:2rem;> Player Information right side.</h3>
+      <h3 style=font-size:2rem;margin-left:20px;> Player Information right side:</h3>
+      <br>
 
         <div class="grid">
         <div class="code-box3">
-            <img src="img\hud.jpg" alt="Teste" width="360px" height="360px" style="border:solid 1px white;">
-            <p>auto 500 dontlist | setpos [$screenright + 10] [$screentop - 35] | displaytext 'Target Information:' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 55] | displaytext 'Target Name:' | setcolor 255 255 255 
-                auto 500 dontlist | setpos [$screenright + 95] [$screentop - 55] | displaytext '$target.name' | setcolor 010 250 025
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 75] | displaytext 'Target HP: % $target.hppc' | setcolor 255 000 000
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 95] | displaytext 'Target MP: % $target.mppc' | setcolor 0 250 250
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 115] | displaytext '---------------------' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 130] | displaytext 'Player Information:' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 150] | displaytext 'Name:' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 55] [$screentop - 150] | displaytext '$name' | setcolor 010 250 025
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 170] | displaytext 'Level:' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 55] [$screentop - 170] | displaytext '$level' | setcolor 010 250 025
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 210] | displaytext 'Mana:' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 85] [$screentop - 210] | displaytext '( %$mppc )' | setcolor 0 250 250
-                auto 500 dontlist | setpos [$screenright + 55] [$screentop - 210] | displaytext '$mp' | setcolor 0 250 250
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 190] | displaytext 'Health:' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 55] [$screentop - 190] | displaytext '$hp' | setcolor 255 0 0
-                auto 500 dontlist | setpos [$screenright + 85] [$screentop - 190] | displaytext '( %$hppc )' | setcolor 255 0 0
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 230] | displaytext 'Speed:' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 55] [$screentop - 230] | displaytext '$self.speed' | setcolor 255 153 51 
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 250] | displaytext 'Time Online:' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 85] [$screentop - 250] | displaytext '$formattime.$deltatime.' | setcolor 255 153 51 
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 270] | displaytext '---------------------' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 290] | displaytext '---------Level--------' | setcolor 010 250 025
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 310] | displaytext 'Time to Next level:' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 125] [$screentop - 310] | displaytext '$formattime.$timetnl' | setcolor 192 192 192
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 330] | displaytext 'Exp to level:' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 90] [$screentop - 330] | displaytext '$formatnum.$exptnl' | setcolor 192 192 192
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 350] | displaytext 'Exp p/ hour:' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 90] [$screentop - 350] | displaytext '$formatnum.$exph' | setcolor 192 192 192
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 370] | displaytext 'Stamina:' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 90] [$screentop - 370] | if [$stamina <= '850'] {setcolor 250 0 0} | else setcolor 150 150 0 | displaytext '$formattime.$stamina' | if [$stamina <= 850] statusmessage 'RECHARGE your stamina!! $formattime.$stamina Remaining!!!' | if [$stamina <= 850] say 'RECHARGE your stamina!! $formattime.$stamina Remaining!!!' | wait 10000
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 390] | displaytext '---------------------' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 410] | displaytext 'Magic lvl:' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 110] [$screentop - 410] | displaytext '$formatnum.$skillpc.mlevel / 100 %' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 70] [$screentop - 410] | setcolor 010 250 025 | {displaytext $skill.mlevel}
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 430] | displaytext 'Distance:' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 110] [$screentop - 430] | displaytext '$formatnum.$skillpc.distance / 100 %' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 70] [$screentop - 430] | setcolor 010 250 025 |if [$formattime.$skilltime.club == 99:99:99] {displaytext $skill.distance}
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 450] | displaytext 'Shielding:' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 110] [$screentop - 450] | displaytext '$formatnum.$skillpc.shielding / 100 %' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 70] [$screentop - 450] | setcolor 010 250 025 |if [$formattime.$skilltime.club == 99:99:99] {displaytext $skill.shielding}</p>
+            <img src="img\hud.jpg" alt="HUD" width="360px" height="360px" style="border:solid 1px black;   display: block;
+            margin-left: auto;
+            margin-right: auto;">
+            <br>
 
+            <p>auto 500 dontlist | setpos [$screenright + 10] [$screentop - 35] | displaytext 'Target Information:' | setcolor 255 255 255 <br>
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 55] | displaytext 'Target Name:' | setcolor 255 255 255 <br>
+                auto 500 dontlist | setpos [$screenright + 95] [$screentop - 55] | displaytext '$target.name' | setcolor 010 250 025<br>
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 75] | displaytext 'Target HP: % $target.hppc' | setcolor 255 000 000<br>
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 95] | displaytext 'Target MP: % $target.mppc' | setcolor 0 250 250<br>
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 115] | displaytext '---------------------' | setcolor 255 255 255<br>
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 130] | displaytext 'Player Information:' | setcolor 255 255 255<br>
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 150] | displaytext 'Name:' | setcolor 255 255 255<br>
+                auto 500 dontlist | setpos [$screenright + 55] [$screentop - 150] | displaytext '$name' | setcolor 010 250 025<br>
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 170] | displaytext 'Level:' | setcolor 255 255 255<br>
+                auto 500 dontlist | setpos [$screenright + 55] [$screentop - 170] | displaytext '$level' | setcolor 010 250 025<br>
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 210] | displaytext 'Mana:' | setcolor 255 255 255<br>
+                auto 500 dontlist | setpos [$screenright + 85] [$screentop - 210] | displaytext '( %$mppc )' | setcolor 0 250 250<br>
+                auto 500 dontlist | setpos [$screenright + 55] [$screentop - 210] | displaytext '$mp' | setcolor 0 250 250<br>
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 190] | displaytext 'Health:' | setcolor 255 255 255<br>
+                auto 500 dontlist | setpos [$screenright + 55] [$screentop - 190] | displaytext '$hp' | setcolor 255 0 0<br>
+                auto 500 dontlist | setpos [$screenright + 85] [$screentop - 190] | displaytext '( %$hppc )' | setcolor 255 0 0<br>
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 230] | displaytext 'Speed:' | setcolor 255 255 255<br>
+                auto 500 dontlist | setpos [$screenright + 55] [$screentop - 230] | displaytext '$self.speed' | setcolor 255 153 51 <br>
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 250] | displaytext 'Time Online:' | setcolor 255 255 255<br>
+                auto 500 dontlist | setpos [$screenright + 85] [$screentop - 250] | displaytext '$formattime.$deltatime.' | setcolor 255 153 51 <br>
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 270] | displaytext '---------------------' | setcolor 255 255 255<br>
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 290] | displaytext '---------Level--------' | setcolor 010 250 025<br>
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 310] | displaytext 'Time to Next level:' | setcolor 255 255 255<br>
+                auto 500 dontlist | setpos [$screenright + 125] [$screentop - 310] | displaytext '$formattime.$timetnl' | setcolor 192 192 192<br>
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 330] | displaytext 'Exp to level:' | setcolor 255 255 255<br>
+                auto 500 dontlist | setpos [$screenright + 90] [$screentop - 330] | displaytext '$formatnum.$exptnl' | setcolor 192 192 192<br>
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 350] | displaytext 'Exp p/ hour:' | setcolor 255 255 255<br>
+                auto 500 dontlist | setpos [$screenright + 90] [$screentop - 350] | displaytext '$formatnum.$exph' | setcolor 192 192 192<br>
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 370] | displaytext 'Stamina:' | setcolor 255 255 255<br>
+                auto 500 dontlist | setpos [$screenright + 90] [$screentop - 370] | if [$stamina <= '850'] {setcolor 250 0 0} | else setcolor 150 150 0 | displaytext '$formattime.$stamina' | if [$stamina <= 850] statusmessage 'RECHARGE your stamina!! $formattime.$stamina Remaining!!!' | if [$stamina <= 850] say 'RECHARGE your stamina!! $formattime.$stamina Remaining!!!' | wait 10000<br>
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 390] | displaytext '---------------------' | setcolor 255 255 255<br>
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 410] | displaytext 'Magic lvl:' | setcolor 255 255 255<br>
+                auto 500 dontlist | setpos [$screenright + 110] [$screentop - 410] | displaytext '$formatnum.$skillpc.mlevel / 100 %' | setcolor 255 255 255<br>
+                auto 500 dontlist | setpos [$screenright + 70] [$screentop - 410] | setcolor 010 250 025 | {displaytext $skill.mlevel}<br>
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 430] | displaytext 'Distance:' | setcolor 255 255 255<br>
+                auto 500 dontlist | setpos [$screenright + 110] [$screentop - 430] | displaytext '$formatnum.$skillpc.distance / 100 %' | setcolor 255 255 255<br>
+                auto 500 dontlist | setpos [$screenright + 70] [$screentop - 430] | setcolor 010 250 025 |if [$formattime.$skilltime.club == 99:99:99] {displaytext $skill.distance}<br>
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 450] | displaytext 'Shielding:' | setcolor 255 255 255<br>
+                auto 500 dontlist | setpos [$screenright + 110] [$screentop - 450] | displaytext '$formatnum.$skillpc.shielding / 100 %' | setcolor 255 255 255<br>
+                auto 500 dontlist | setpos [$screenright + 70] [$screentop - 450] | setcolor 010 250 025 |if [$formattime.$skilltime.club == 99:99:99] {displaytext $skill.shielding}"</p>
 
         </div>
         </div>
@@ -349,16 +353,16 @@
   <section id="download" class="intro main-bg section">
     <div class="main-content intro-content">
       <div class="intro-text-content">
-        <h2 style=font-size:5rem;>Downloads</h2>
+        <h2>Downloads</h2>
         <p > <b style=font-size:3rem;>⚠ Warning</b><br> We are not the owners of these programs, download at own risk.</p>
         <br>
             <div class="botoes">
               <ul>
-                <li><a href="https://mega.nz/file/i9ll0SIA#Hl0x9RLTyei-DKIAv-Uxxr4yIZnHWzyYRlIZGzR_Nvc" target="_blank">Elfbot</a></li>
+                <li><a href="https://mega.nz/file/i9ll0SIA#Hl0x9RLTyei-DKIAv-Uxxr4yIZnHWzyYRlIZGzR_Nvc" target="_blank"><b>Elfbot</b></a></li>
               <br>
-              <li><a href="https://mega.nz/file/elsRmQZb#acsQ5d-4niliOOyX2q8VGBoD37JVIVpwmfJGz0Z3CNY" target="_blank">Crack</a></li>
+              <li><a href="https://mega.nz/file/elsRmQZb#acsQ5d-4niliOOyX2q8VGBoD37JVIVpwmfJGz0Z3CNY" target="_blank"><b>Crack</b></a></li>
               <br>
-              <li><a href="https://mega.nz/file/mok3xATA#XMmJVlJh1RXFImSqWYTkqG_y--QI1o0UPKNF9HxCQPY" target="_blank">Windows 10 Fix</a></li>
+              <li><a href="https://mega.nz/file/mok3xATA#XMmJVlJh1RXFImSqWYTkqG_y--QI1o0UPKNF9HxCQPY" target="_blank"><b>Windows 10 Fix</b></a></li>
                 <br>
             </ul>
               *If you are using Windows 10, use this file to replace the old elfbot.dll file in your ElfBot folder in order to make hotkeys like Shift + F11 or Shift + F12 function properly again.
@@ -370,12 +374,14 @@
         <img src="img/download2.svg" alt="Download Elfbot with Crack">
     </div>
   </section>
+
   <footer class="footer">
     <div align:center; class="footer-content">
-        <h6 style=font-size:1.5rem;>
+        <h6 style=font-size:1.5rem;position:absolut;>
             <p>This is a simple website developed just for study.
              Feel Free to use all scripts containing in here.</p>
-                Made by Victor Schiavinato.
+                Code by Victor Schiavinato.<br>
+                Visitors Counter:
            
              <!-- hitwebcounter Code START -->
     <a href="https://www.hitwebcounter.com" target="_blank">
