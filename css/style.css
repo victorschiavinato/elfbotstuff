@@ -166,3 +166,81 @@ a:visited{
 .cavebotfiles a {
     color:white;
 }
+
+.cavebotspots {
+    display:inline-block;
+    flex-direction: row;
+    justify-self: center;
+    align-items: center;
+    text-align: center;
+    width: 250px;
+    height: 320px;
+    background:rgba(0, 0, 0, .2);
+    border: 1px solid rgb(53, 53, 53);
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.cavebotspots .nomecave {
+  text-align: center;
+  font-weight: bold;
+}
+
+.cavebotspots .descricaocave {
+  text-align: left;
+  top:20px;
+}
+
+.cavebotspots img {
+    max-height: 50px;
+    max-height: 50px;
+    position:relative;
+
+}
+
+.downloadbutton{
+  width: 50px;
+  height: 20px;
+  background:darkslategray;
+  color: white;
+  border-radius: 3px;
+  padding: 3px;
+  position: relative;
+  top: 50px;
+  padding: 5px;
+}
+.downloadbutton a{
+    font-size: 3px;
+
+}
+
+
+.botoes ul {
+  list-style-type: none;
+  margin-left: 20px;
+  text-align: center;
+  
+}
+
+.botoes ul li {
+  line-height: 50px;
+  width: 70%;
+  background:rgb(29, 29, 29);
+  color: white;
+  border-radius: 3px;
+  padding: 3px;
+  box-shadow: 5px 5px 5px #000;
+}
+.botoes ul li a{
+  line-height: 50px;
+  width: 70%;
+  background:rgb(29, 29, 29);
+  color: white;
+  border-radius: 3px;
+  padding: 3px;
+
+}
+.botoes ul li:hover{
+  text-decoration: underline;
+}
