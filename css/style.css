@@ -1,0 +1,262 @@
+.intro-content {
+    position: relative;
+    top: -8rem;
+    /* top: -8rem; */
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--gap);
+    min-height: 100vh;
+  }
+  .intro-text-content, .intro-img {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+  }
+  .intro-img img,
+  .intro-img svg {
+    max-width: 100%;
+    height: auto;
+  }
+  .top3-content {
+    max-width: 80rem;
+    display: block;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    height: 100vh;
+    min-height: 100vh;
+    text-align: center;
+    overflow: auto;
+    box-shadow: inset 0 0 1em black;
+    
+  }
+  
+  .grid-one-content {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    min-height: 100vh;
+    overflow:auto;
+  }
+  .grid-main-heading {
+    margin-bottom: 1rem;
+  }
+  .grid-description {
+    padding-bottom: 5rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+  }
+  .grid h3 {
+    font-size: 3rem;
+    position: relative;
+
+    padding-bottom: 2rem;
+  }
+  .grid h3::before {
+    position: absolute;
+    font-size: 8rem;
+    font-style: italic;
+    top: -4rem;
+    left: -2rem;
+  }
+  .gallery-img {
+    width: 100%;
+    max-width: 36rem;
+    max-height: 36rem;
+    overflow: hidden;
+  }
+  .gallery-img img {
+    transition: all 300ms ease-in-out;
+  }
+  
+  .gallery-img img:hover {
+    transform: translate(-3%, 3%) scale(1.2) rotate(5deg);
+  }
+
+  .links {
+      list-style-type: none;
+  }
+  .links a:visited{
+    color:white;
+    text-transform: uppercase;
+    border: 2px solid white;
+    padding: 3px;
+}
+a:visited{
+    color:white;
+}
+
+.botao-download {
+    width: 170px;
+    height: 50px;
+    color: white;
+    border: 1px solid white;
+    background:#262626;
+    font-size: 18px;
+    text-transform: uppercase;
+
+}
+
+.botao-download:hover {
+    background:#333333;
+}
+
+.code-box{
+        text-align: center;
+        width: auto;
+        height: auto;
+        border:1px solid white;
+        background-color: #101010;
+        white-space: pre-line;
+        padding:10px;
+        font-size:0.9em;
+        color:#818181;
+}
+.code-box2{
+    text-align: left;
+    width: auto;
+    height: 200px;
+    overflow: auto;
+    border:1px solid white;
+    background-color: #101010;
+    padding:10px;
+    font-size:0.9em;
+    color:#818181;
+
+
+}
+.code-box3{
+    text-align: left;
+    width: 50vh;
+    height: 500px;
+    overflow: auto;
+    border:1px solid white;
+    background-color: #101010;
+    padding:10px;
+    font-size:0.9em;
+    color:#818181;
+    font-size:15px;
+
+}
+
+.footer {
+    width: 100%;
+    height: 220px;
+    background: black;
+    left: 0;
+    bottom: 2000;
+    display: block;
+}
+
+.footer-content{
+    color:white;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif; 
+    padding-top: 20px;;
+}
+
+.intro-img2 {
+    position:relative;
+    top:400px;
+    padding-left: 200px;
+}
+
+.cavebotfiles a {
+    color:white;
+}
+
+.cavebotspots {
+    display:inline-block;
+    flex-direction: row;
+    justify-self: center;
+    align-items: center;
+    text-align: center;
+    width: 250px;
+    height: 330px;
+    background:rgba(0, 0, 0, .2);
+    border: 1px solid rgb(53, 53, 53);
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.cavebotspots .nomecave {
+  text-align: center;
+  font-weight: bold;
+}
+
+.cavebotspots .descricaocave {
+  text-align: left;
+  top:20px;
+}
+
+.cavebotspots img {
+    max-height: 50px;
+    max-height: 50px;
+    position:relative;
+
+}
+
+.downloadbutton{
+  width: 50px;
+  height: 20px;
+  background:darkslategray;
+  color: white;
+  border-radius: 3px;
+  padding: 3px;
+  position: relative;
+  top: 50px;
+  padding: 5px;
+}
+.downloadbutton a{
+    font-size: 3px;
+
+}
+
+
+.botoes ul {
+  list-style-type: none;
+  margin-left: 20px;
+  text-align: center;
+  
+}
+
+.botoes ul li {
+  line-height: 50px;
+  width: 70%;
+  background:rgb(29, 29, 29);
+  color: white;
+  border-radius: 3px;
+  padding: 3px;
+  box-shadow: 5px 5px 5px #000;
+}
+.botoes ul li a{
+  line-height: 50px;
+  width: 70%;
+  background:rgb(29, 29, 29);
+  color: white;
+  border-radius: 3px;
+  padding: 3px;
+
+}
+.botoes ul li:hover{
+  text-decoration: underline;
+}
+
+.botaohud
+{
+  height:30px;
+  width:150px;
+  border-radius:8px;
+  padding:10px;
+  font-size:20px;
+  height:50px;
+  cursor:pointer;
+  background-color:rgb(44, 44, 44);
+}
