@@ -79,7 +79,6 @@ img {
     padding: var(--gap);
     padding: 10rem var(--gap);
   }
-  
   .section {
     min-height: 100vh;
   }
@@ -99,15 +98,16 @@ img {
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
+    background: rbga(0, 0, 0, 0.2); 
   }
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #888; 
+    background: #ff502a;
+    border-radius: 4px;
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
+    background:#5c1d0f; 
   }
