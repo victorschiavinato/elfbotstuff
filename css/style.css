@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ElfBot Scripts</title>
+  <title>ElfBot Scripts - Cavebots, Hotkeys and More!</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/form.css">
     <link rel="stylesheet" href="css/style.css">
-
 </head>
 <body class="main-bg">
   <aside class="menu white-bg">
@@ -25,7 +24,6 @@
       <h1>
         <a href="#home">ELFBOT SCRIPTS</a>
       </h1>
-
       <nav>
         <ul>
           <li><a href="#hotkeys">Hotkeys</a></li>
@@ -39,9 +37,7 @@
       </nav>
     </div>
   </aside>
-
   <div class="menu-spacing"></div>
-
   <section id="intro" class="intro main-bg section">
   <section id="home" class="intro main-bg section">
     <div class="main-content intro-content">
@@ -113,14 +109,8 @@
       <p>Mana Training</p>    
       <div class="code-box">auto 500 if [$mppc >90] say 'Exori gran'</div>  
       <br>
-
-
-
-
     </div>
   </section>
-
-
   <section id="cavebot" class="grid-one main-bg section">
     <div class="main-content grid-one-content">
       <h2 class="grid-main-heading">Cavebot</h2>
@@ -289,7 +279,6 @@
     </div>
     </div>
   </section>
-
   <section id="hud" class="grid-one main-bg section">
     <div class="main-content grid-one-content">
       <h2 class="grid-main-heading">HUD</h2>
@@ -379,7 +368,6 @@
         <img src="img/download2.svg" alt="Download Elfbot with Crack">
     </div>
   </section>
-
   <footer class="footer">
     <div align:center; class="footer-content">
         <h6 style=font-size:1.5rem;position:absolut;>
@@ -393,9 +381,6 @@
         <img src="https://hitwebcounter.com/counter/counter.php?page=7882708&style=0029&nbdigits=3&type=ip&initCount=0" title="Free Counter" Alt="web counter"   border="0" /></a>                                    
             </h6>
     </div>
-  </footer>
-
-                                 
+  </footer>                      
 </body>
-
 </html> 
