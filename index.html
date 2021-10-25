@@ -1,24 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ElfBot Scripts - Cavebots, Hotkeys and More!</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
     rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/elements.css">
-    <link rel="stylesheet" href="css/classes.css">
-    <link rel="stylesheet" href="css/menu.css">
-    <link rel="stylesheet" href="css/form.css">
-    <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/elements.css">
+  <link rel="stylesheet" href="css/classes.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/form.css">
+  <link rel="stylesheet" href="css/prism.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="scripts/prism.js"></script>
+  <script>
+    function CopyToClipboard(containerid) {
+      if (document.selection) {
+        var range = document.body.createTextRange();
+        range.moveToElementText(document.getElementById(containerid));
+        range.select().createTextRange();
+        document.execCommand("copy");
+      } else if (window.getSelection) {
+        var range = document.createRange();
+        range.selectNode(document.getElementById(containerid));
+        window.getSelection().addRange(range);
+        document.execCommand("copy");
+        alert("Code has been copied.")
+      }
+    }
+  </script>
 </head>
+
 <body class="main-bg">
   <aside class="menu white-bg">
     <div class="main-content menu-content">
@@ -32,356 +52,691 @@
           <li><a href="#cavebotfiles">Hunts</a></li>
           <li><a href="#hud">HUD</a></li>
           <li><a href="#download">Downloads</a></li>
-          <li><a href="https://elfbotscripts.freeforums.net/thread/2/all-actions-conditions?page=1&scrollTo=2" target="_blank">Conditions</a></li>
-          <li><a href="https://elfbotscripts.freeforums.net/thread/49/list-variables-elfbot?page=1&scrollTo=49" target="_blank">Variables</a></li>
+          <li><a href="https://elfbotscripts.freeforums.net/thread/2/all-actions-conditions?page=1&scrollTo=2"
+              target="_blank">Conditions</a></li>
+          <li><a href="https://elfbotscripts.freeforums.net/thread/49/list-variables-elfbot?page=1&scrollTo=49"
+              target="_blank">Variables</a></li>
         </ul>
       </nav>
     </div>
   </aside>
   <div class="menu-spacing"></div>
   <section id="intro" class="intro main-bg section">
-  <section id="home" class="intro main-bg section">
-    <div class="main-content intro-content">
-      <div class="intro-text-content">
-        <h2>Scripts, Cavebots and Stuffs for Elfbot 8.6</h2>
-        <p>This is a single page with multiple sections, use Ctrl+F to find what you are looking for.</p>
+    <section id="home" class="intro main-bg section">
+      <div class="main-content intro-content">
+        <div class="intro-text-content">
+          <h2>Scripts, Cavebots and Stuffs for Elfbot 8.6</h2>
+          <p>This is a single page with multiple sections, use Ctrl+F to find what you are looking for.</p>
+          <br>
+          <p>Use the top menu to scroll thru sections.</p>
+        </div>
+        <div class="intro-img">
+          <img src="img/firstimg.svg" alt="Logo de HTML, CSS e JS.">
+        </div>
+      </div>
+    </section>
+    <section id="hotkeys" class="white-bg section" style="padding-top:100px">
+      <h2 style=text-align:center;>Hotkeys</h2>
+      <p style=text-align:center;>All the hotkeys listed below can be adapted or modified.
+        <br>Scroll to see the full content.
+      </p>
+      <br>
+      <div class="main-content top3-content">
+        <p>Haste</p>
+        <pre><code class="language-lua">
+             auto 1000 dontlist | if [$hasted == 0 && $inpz == 0] {say 'utani hur' | wait 1000 }
+        </code> </pre>
+
+        <h6>Only use Hast if you are not in Pz.</h6>
         <br>
-        <p>Use the top menu to scroll thru sections.</p>
-      </div>
-      <div class="intro-img">
-        <img src="img/firstimg.svg" alt="Logo de HTML, CSS e JS.">
-      </div>
-    </div>
-  </section>
-  <section id="hotkeys" class="main-bg section" style="padding-top:100px">
-    <h2 style=text-align:center;>Hotkeys</h2>
-     <p style=text-align:center;>All the hotkeys listed below can be adapted or modified.
-    <br>Scroll to see the full content.</p>
-    <br>
-    <div class="main-content top3-content">
-      <p>Haste</p>
-      <div class="code-box">auto 1000 dontlist | if [$hasted == 0 && $inpz == 0] {say 'utani hur' | wait 1000 }</div>
-      <h6>Only use Hast if you are not in Pz.</h6>
-      <br>
-      <p>Eat Food</p>
-      <div class="code-box">auto 60000 dontlist |  if [$inpz == 0] { eatfood }</div>
-      <h6>Only eat food outsite Pz.</h6>
-      <br>
-      <p>Fast Hand</p>
-      <div class="code-box">auto 1 collectitems 'Expedition Backpack'  8097 3043 3040 9018 6526 3368 3021 5794 </div>
-      <h6>Change the name of your Backpack and add the items ID you want.</h6>
-      <br>
-      <p>Reconnect</p>
-      <div class="code-box">auto 200 | dontlist | if [$hp == 0] {reconnect | set $died 1 | wait 400 | say '!bless'} | if [$died == 1] {gotolabel temple | set $died '0'}</div>
-      <h6>Reconnect and go to a label 'x' (You must set that label in your cavebot).</h6>
-      <br>
-      <p>Leave cave if attacked</p>
-      <div class="code-box">auto 200 | listas 'Pk' | ifplayerattacking {stopattack | settargeting off | gotolabel 'pk' | end}</div>
-      <h6>Go to a label 'x' if a player attack you(You must set that label in your cavebot).</h6> 
-      <br>
-      <p>Self Potion</p>    
-      <div class="code-box">auto 100 if [$hppc <= 70] useoncreature 7642 self
-        auto 100 if [$mppc <= 70] useoncreature 237 self</div> 
-      <br>
-      <p>Refil Soft Boots</p>    
-      <div class="code-box">auto 200 if [$itemcount.6530 == 1] say '!soft'</div>     
-      <br>
-      <p>Change gold</p>    
-      <div class="code-box">auto 200 | listas 'Crystalcoins - Gold Nugget' | stackitems | if [ $itemcount.3043 >= 100 ] equipbelt 3043 | if [$beltslot.id == 3043 && $beltslot.count == 100] useitem 3043
-        auto 200 | listas 'Platinum coin- Crystalcoins' | stackitems | if [ $itemcount.3035 >= 100 ] equipbelt 3035 | if [$beltslot.id == 3035 && $beltslot.count == 100] useitem 3035</div>
-      <br>
-      <p>UE Hunt</p>    
-      <div class="code-box">auto 100 if [$playersaround.10 == 0 && $monstersaround.1 >= 2] { istargeting say 'Exori Gran' } | if [$playersaround.10 >= 1] { istargeting say 'Exori hur'}</div>  
-      <br>
-      <p>Blessed Wooden Stake</p>    
-      <div class="code-box">auto 500 if [$monstersaround.7 => 0] {stake 7 5995 | loop}</div>  
-      <br>
-      <p>Mana Training</p>    
-      <div class="code-box">auto 500 if [$mppc >90] say 'Exori gran'</div>  
-      <br>
-      <p>Auto Manashield / Invisible</p>    
-      <div class="code-box">auto 500 manashield
-           auto 500 goinvisible
-      </div>  
-      <br> 
-      <p>Custom Spell</p>    
-      <div class="code-box">auto 250 isattacking say 'exori gran san'</div>  
-      <br>
-      <p>Mana Training</p>    
-      <div class="code-box">auto 500 if [$mppc >90] say 'Exori gran'</div>  
-      <br>
-    </div>
-  </section>
-  <section id="cavebot" class="grid-one main-bg section">
-    <div class="main-content grid-one-content">
-      <h2 class="grid-main-heading">Cavebot</h2>
-      <p class="grid-description">Some useful cavebots scripts.</p>
+        <p>Eat Food</p>
+        <pre><code class="language-lua">
+             auto 60000 dontlist |  if [$inpz == 0] { eatfood }
+      </code> </pre>
 
-      <div class="grid">
-        <article>
-            
-          <h3>NPC Talk Travel</h3>
-          <div class="code-box2">
-            <p>Say hi<br>
-            Wait 1000<br>
-            Npcsay Carlin<br>
-            Wait 1000</p>
-        </div>
-        </article>
-        <article>
-          <h3>NPC Buy Potions</h3>
-          <div class="code-box2">
-            <p>1:
-                Say hi<br>
-                Wait 1000<br>
-                Npcsay trade<br>
-                Wait 1000<br>
-                2:<br>
-                set $i '238'<br>
-                Countitems '$i'<br>
-                 Wait 500<br>
-                 if [$count < 600] {buyitems $i 100 | wait 300 | gotolabel 'buymana'}<br> 
-                 gotolabel 'smanadone'
-            </p>
-        </div>
-        </article>
-        <article>
-          <h3>NPC Sell Loot</h3>
-          <div class="code-box2">
-        <p>{ npcsay 'hi' | npcsay 'trade' | wait 1000 | end }<br>
-            { wait 1000 | countitems 3392 | wait 1000 }<br>
-            { sellitems 3392 $count | end }<br>
-            { wait 1000 | countitems 3393 | wait 1000 }<br>
-            { sellitems 3393 $count | end } npcsay 'bye'</p>
-        </div>
-        </article>
-        <article>
-            <h3>Check Potions</h3>
-            <div class="code-box2">
-          <p>countitems 7643 | wait 200 | set $uhp $count | countitems 268 | wait 200 | set $mpot $count<br>
-            if [$uhp =< 200 || $mpot =< 400] {gotolabel refil}<br>
-            else {gotolabel inicio}</p>
-          </div>
+        <h6>Only eat food outsite Pz.</h6>
+        <br>
+        <p>Fast Hand</p>
+        <pre><code class="language-lua">
+            auto 1 collectitems 'Expedition Backpack' 8097 3043 3040 9018 6526 3368 3021 5794 
+      </code> </pre>
+
+        <h6>Change the name of your Backpack and add the items ID you want.</h6>
+        <br>
+        <p>Reconnect</p>
+        <pre><code class="language-lua">
+            auto 200 | dontlist | if [$hp == 0] {reconnect | set $died 1 | wait 400 | say '!bless'} | if [$died == 1] {gotolabel temple | set $died '0'}      
+      </code> </pre>
+
+        <h6>Reconnect and go to a label 'x' (You must set that label in your cavebot).</h6>
+        <br>
+        <p>Leave cave if attacked</p>
+        <pre><code class="language-lua">
+            auto 200 | listas 'Pk' | ifplayerattacking {stopattack | settargeting off | gotolabel 'pk' | end}      
+          </code> </pre>
+
+        <h6>Go to a label 'x' if a player attack you(You must set that label in your cavebot).</h6>
+        <br>
+        <p>Self Potion</p>
+        <pre><code class="language-lua">
+            auto 100 if [$hppc <= 70] useoncreature 7642 self
+            auto 100 if [$mppc <= 70] useoncreature 237 self      </code> </pre>
+
+        <br>
+        <p>Refil Soft Boots</p>
+        <pre><code class="language-lua">
+            auto 200 if [$itemcount.6530 == 1] say '!soft'      </code> </pre>
+
+        <br>
+        <p>Change gold</p>
+
+        <pre><code class="language-lua">
+            auto 200 | listas 'Crystalcoins - Gold Nugget' | stackitems | if [ $itemcount.3043 >= 100 ] equipbelt 3043 | if [$beltslot.id == 3043 && $beltslot.count == 100] useitem 3043
+            auto 200 | listas 'Platinum coin- Crystalcoins' | stackitems | if [ $itemcount.3035 >= 100 ] equipbelt 3035 | if [$beltslot.id == 3035 && $beltslot.count == 100] useitem 3035      </code> </pre>
+
+        <br>
+        <p>UE Hunt</p>
+        <pre><code class="language-lua">
+            auto 100 if [$playersaround.10 == 0 && $monstersaround.1 >= 2] { istargeting say 'Exori Gran' } | if [$playersaround.10 >= 1] { istargeting say 'Exori hur'}      </code> </pre>
+
+        <br>
+        <p>Blessed Wooden Stake</p>
+        <pre><code class="language-lua">
+            auto 500 if [$monstersaround.7 => 0] {stake 7 5995 | loop}      </code> </pre>
+
+        <br>
+        <p>Mana Training</p>
+        <pre><code class="language-lua">
+            auto 500 if [$mppc >90] say 'Exori gran'      </code> </pre>
+
+        <br>
+        <p>Auto Manashield / Invisible</p>
+        <pre><code class="language-lua">
+            auto 500 manashield
+            auto 500 goinvisible
+          </code> </pre>
+
+        <br>
+        <p>Custom Spell</p>
+        <pre><code class="language-lua">
+            auto 250 isattacking say 'exori gran san'      </code> </pre>
+
+        <br>
+        <p>Mana Training</p>
+        <pre><code class="language-lua">
+            auto 500 if [$mppc >90] say 'Exori gran'      </code> </pre>
+
+        <br>
+      </div>
+    </section>
+    <section id="cavebot" class="grid-one main-bg section">
+      <div class="main-content grid-one-content">
+        <h2 class="grid-main-heading">Cavebot</h2>
+        <p class="grid-description">Some useful cavebots scripts.</p>
+
+        <div class="grid">
+          <article>
+
+            <h3>NPC Talk Travel</h3> <button id="downbutton2" onclick="CopyToClipboard('cave1')">Copy Code</button>
+            <div class="code-box2" id="cave1">
+              <pre><code class="language-lua">
+          Say hi
+          Wait 1000
+          Npcsay 'Carlin'
+          Wait 1000
+          </code></pre>
+
+            </div>
           </article>
           <article>
-            <h3>Check Cap</h3>
-            <div class="code-box2">
-          <p>if [$cap =< 2000] {gotolabel 'refil' wait 500}</p>
-          </div>
+            <h3>NPC Buy Potions</h3> <button id="downbutton2" onclick="CopyToClipboard('cave2')">Copy Code</button>
+            <div class="code-box2" id="cave2">
+              <pre><code class="language-lua">
+          1:
+            Say hi
+            Wait 1000
+            Npcsay trade
+            Wait 1000
+          2:
+            set $i '238'
+            Countitems '$i'
+            Wait 500
+            if [$count < 600] {buyitems $i 100 | wait 300 | gotolabel 'buymana'}<br> 
+            gotolabel 'smanadone'
+              </code></pre>
+              <div class="notes">
+                <b>Note:</b> Change the ID 238 for your potion ID.
+              </div>
+            </div>
           </article>
           <article>
-            <h3>Check SD</h3>
-            <div class="code-box2">
-          <p>countitems 3155 | wait 200 | set $sdrune $count<br>
-            if [$sdrune =< 300] {gotolabel refil}<br>
-            else {gotolabel hunt}</p>
-          </div>
+            <h3>NPC Sell Loot</h3> <button id="downbutton2" onclick="CopyToClipboard('cave3')">Copy Code</button>
+            <div class="code-box2" id="cave3">
+              <pre><code class="language-lua">
+            { npcsay 'hi' | npcsay 'trade' | wait 1000 | end }
+            { wait 1000 | countitems 3392 | wait 1000 }
+            { sellitems 3392 $count | end }
+            { wait 1000 | countitems 3393 | wait 1000 }
+            { sellitems 3393 $count | end } npcsay 'bye'
+          </code></pre>
+              <div class="notes">
+                <b>Note:</b> Add more loots item adding the last 2 lines and changing the ID's.
+              </div>
+            </div>
           </article>
           <article>
-            <h3>Open BP</h3>
-            <div class="code-box2">
-          <p>closeallwindows<br>
-            wait 2000<br>
-            openbpitem<br>
-            wait 2000<br>
-            openitemnew 9602 1 00</p>
-          </div>
+            <h3>Check Potions</h3> <button id="downbutton2" onclick="CopyToClipboard('cave4')">Copy Code</button>
+            <div class="code-box2" id="cave4">
+              <pre><code class="language-lua">
+          countitems 7643 | wait 200 | set $hpot $count | countitems 268 | wait 200 | set $mpot $count<br>
+          if [$hpot =< 200 || $mpot =< 400] {gotolabel refil}<br>
+          else {gotolabel start}</p>
+            </code></pre>
+              <div class="notes">
+                <b>Note:</b> Change the ID of hpot and mpot.
+              </div>
+            </div>
           </article>
           <article>
-            <h3>Move Potions to BP</h3>
-            <div class="code-box2">
+            <h3>Check Cap</h3> <button id="downbutton2" onclick="CopyToClipboard('cave5')">Copy Code</button>
+            <div class="code-box2" id="cave5">
+              <pre><code class="language-lua">
+          if [$cap =< 2000] {gotolabel 'refil' wait 500}</p>
+          </code></pre>
+            </div>
+          </article>
+          <article>
+            <h3>Check Pot & Cap</h3> <button id="downbutton2" onclick="CopyToClipboard('cave6')">Copy Code</button>
+            <div class="code-box2" id="cave6">
+              <pre><code class="language-lua"><p>
+          countitems 7643 | wait 200 | set $hpot $count | countitems 268 | wait 200 | set $mpot $count
+          if [$hpot =< 200 || $mpot =< 400 || cap =<500] {gotolabel refil}</p>
+          else {gotolabel start} 
+          </code></pre>
+              <div class="notes">
+                <b>Note:</b> Change the ID of hpot and mpot.
+              </div>
+            </div>
+          </article>
+          <article>
+            <h3>Check SD</h3> <button id="downbutton2" onclick="CopyToClipboard('cave7')">Copy Code</button>
+            <div class="code-box2" id="cave7">
+              <pre><code class="language-lua">
+          countitems 3155 | wait 200 | set $sdrune $count<br>
+          if [$sdrune =< 300] {gotolabel refil}<br>
+          else {gotolabel hunt}</p></code></pre>
+            </div>
+          </article>
+          <article>
+            <h3>Open BP</h3> <button id="downbutton2" onclick="CopyToClipboard('cave8')">Copy Code</button>
+            <div class="code-box2" id="cave8">
+              <pre><code class="language-lua">
+          closeallwindows
+          wait 2000<br>
+          openbpitem<br>
+          wait 2000<br>
+          openitemnew 9602 1 00
+        </code></pre>
+              <div class="notes">
+                <b>Note:</b> Change the 9602 ID to your Backpack ID.
+              </div>
+            </div>
+          </article>
+          <article>
+            <h3>Move Potions to BP</h3> <button id="downbutton2" onclick="CopyToClipboard('cave9')">Copy Code</button>
+            <div class="code-box2" id="cave9">
+              <pre><code class="language-lua">
           <p>auto 200 moveitems 268 2868<br>
-             auto 200 moveitems 7643 2867</p>
-          </div>
+          auto 200 moveitems 7643 2867</p>
+        </code></pre>
+              <div class="notes">
+                <b>Note:</b> Ex: this code will move your mpot(268) to your backpack (2868). Backpack must be open.
+              </div>
+            </div>
           </article>
 
-      </div>
-      <br>
-      <div class="cavebotfiles" id="cavebotfiles" style="padding-top:100px">
-        <h2>Cavebots files</h2>
-        <h3 style="font-size: 2rem;">Here you can download some samples of 100% AFK scripts!</h3>
-        <h3 style="font-size: 1.5rem;">Note: Some scripts may need waypoints updates, read the labels inside.</h3>
-       
-        <div class="cavebotspots">
-        <p><img src="https://www.tibiawiki.com.br/images/9/97/Dragon_Lord.gif" alt="Dragon Lord"></p>
-            <div class="nomecave"><p> 100% AFK DL Vesuvia</p></div>
-            <br>
-              <div class="descricaocave"><P> <b>Level Required:</b> 100<br><b>Start:</b> Thais Temple <br><b>Vocation:</b> RP<br><b>Require TP Clay:</b> Yes<br><b>Server:</b> <a href="https://www.ascar.us/news">Ascar.us</a></P></div>
-            <a href="https://drive.google.com/file/d/1ZeAYCdkIy8UwMkWtAk_rZRnhO5BV554r/view?usp=sharing" class="downloadbutton">Cavebot</a>
-            <a href="https://drive.google.com/file/d/1a_altijrMgGjRLmrMD5nwXwzgjv5uvAP/view?usp=sharing" class="downloadbutton">Targeting</a>
+        </div>
+        <br>
+        <div class="cavebotfiles" id="cavebotfiles" style="padding-top:100px">
+          <h2>Cavebots files</h2>
+          <h3 style="font-size: 2rem;">Here you can download some samples of 100% AFK scripts!</h3><br>
+          <h3 style="font-size: 1.5rem;color:brown">⚠ Some scripts may need waypoints updates, read the labels inside.</h3>
+
+
+
+          <div class="cavebotspots">
+            <p><img src="https://www.tibiawiki.com.br/images/9/97/Dragon_Lord.gif" alt="Dragon Lord"></p>
+            <div class="nomecave">
+              <p> 100% AFK DL Vesuvia</p>
+            </div>
+            <table class="tg">
+              <thead>
+                <tr>
+                  <th class="tg-0lax">Level Required:</th>
+                  <th class="tg-rorx">100</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="tg-0lax">Start:</td>
+                  <td class="tg-0lax">Thais Temple</td>
+                </tr>
+                <tr>
+                  <td class="tg-0lax">Vocation:</td>
+                  <td class="tg-0lax">Paladin <img src="https://www.tibiawiki.com.br/images/0/0b/Arbalest.gif"
+                      width="15px" height="15px"></td>
+                </tr>
+                <tr>
+                  <td class="tg-0lax">Require TP Clay:</td>
+                  <td class="tg-yes">YES</td>
+                </tr>
+                <tr>
+                  <td class="tg-0lax">Server:</td>
+                  <td class="tg-0lax"><a href="https://ascar.us/" target="_blank" rel="noopener noreferrer">Ascar.us</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <a href="https://drive.google.com/file/d/1ZeAYCdkIy8UwMkWtAk_rZRnhO5BV554r/view?usp=sharing"
+              class="downloadbutton">Cavebot</a>
+            <a href="https://drive.google.com/file/d/1a_altijrMgGjRLmrMD5nwXwzgjv5uvAP/view?usp=sharing"
+              class="downloadbutton">Targeting</a>
+
           </div>
 
           <div class="cavebotspots">
             <p><img src="https://www.tibiawiki.com.br/images/9/97/Dragon_Lord.gif" alt="Dragon Lord"></p>
-                <div class="nomecave"><p> 100% AFK DL Vesuvia</p></div>
-                <br>
-                  <div class="descricaocave"><P> <b>Level Required:</b> 100<br><b>Start:</b> Thais Temple <br><b>Vocation:</b> EK<br><b>Require TP Clay:</b> Yes<br><b>Server:</b> <a href="https://www.ascar.us/news">Ascar.us</a></P></div>
-                <a href="https://drive.google.com/file/d/1X71IRf9cvEcsgFBveQPKT7Mg0VbW8L-6/view?usp=sharing" class="downloadbutton">Cavebot</a>
-                <a href="https://drive.google.com/file/d/1RdCfiHX1sL0omTSfWFc3zERHAMXudtP9/view?usp=sharing" class="downloadbutton">Targeting</a>
-              </div>
-
-              <div class="cavebotspots">
-                <p><img src="https://www.tibiawiki.com.br/images/1/16/Grim_Reaper.gif" alt="Grim Reaper"></p>
-                    <div class="nomecave"><p>100% AFK GR Asylium</p></div>
-                    <br>
-                      <div class="descricaocave"><P> <b>Level Required:</b> 300<br><b>Start:</b> Asylium Pot Store <br><b>Vocation:</b> EK<br><b>Require TP Clay:</b> No<br>><b>Server:</b> <a href="https://www.ascar.us/news">Ascar.us</a></P></div>
-                    <a href="https://drive.google.com/file/d/1CbkphSoSJEjdqfoCsRCTb5lYIGLVf1Y7/view?usp=sharing" class="downloadbutton">Cavebot</a>
-                    <a href="https://drive.google.com/file/d/1Yarx09-raX0yQf5gVSMmt3JXpdQFzmvY/view?usp=sharing" class="downloadbutton">Targeting</a>
-                  </div>
-
-                  <div class="cavebotspots">
-                    <p><img src="https://www.tibiawiki.com.br/images/b/ba/Dawnfire_Asura.gif" alt="Dragon Lord"></p>
-                        <div class="nomecave"><p>100% AFK Asura</p></div>
-                        <br>
-                          <div class="descricaocave"><P> <b>Level Required:</b> 350<br><b>Start:</b> Thais Temple <br><b>Vocation:</b> RP<br><b>Require TP Clay:</b> Yes<br><b>Server:</b> <a href="https://www.ascar.us/news">Ascar.us</a></P></div>
-                        <a href="https://drive.google.com/file/d/1Cprv7Q-Xum4CjjeIp9ziyKi-4cYonUlZ/view?usp=sharing" class="downloadbutton">Cavebot</a>
-                        <a href="https://drive.google.com/file/d/1HrP_pn4sqPTc4dV-y8fe2jLLKSwjhUTt/view?usp=sharing" class="downloadbutton">Targeting</a>
-                      </div>  
-
-                      <div class="cavebotspots">
-                        <p><img src="https://www.tibiawiki.com.br/images/2/28/Sea_Serpent.gif" alt="Makara"></p>
-                            <div class="nomecave"><p>100% AFK Makaras</p></div>
-                            <br>
-                              <div class="descricaocave"><P> <b>Level Required:</b> 250<br><b>Start:</b> VIP <br><b>Vocation:</b> EK<br><b>Require TP Clay:</b> Yes<br><b>Server:</b> <a href="https://www.ascar.us/news">Ascar.us</a></P></div>
-                            <a href="https://drive.google.com/file/d/1iKNtmbkFwxTI25Ar4aj5Uf07GjX2Vw9O/view?usp=sharing" class="downloadbutton">Cavebot</a>
-                            <a href="https://drive.google.com/file/d/1mzfACbfr_ukk4H01OOkalKPl6cUzSPvN/view?usp=sharing" class="downloadbutton">Targeting</a>
-                          </div>  
-                      
-                          <div class="cavebotspots">
-                            <p><img src="https://www.tibiawiki.com.br/images/b/b0/Fury.gif" alt="Fury"></p>
-                                <div class="nomecave"><p>Refil Fury Incheon</p></div>
-                                <br>
-                                  <div class="descricaocave"><P> <b>Level Required:</b> 300<br><b>Start:</b> Incheon DP <br><b>Vocation:</b> EK<br><b>Require TP Clay:</b> No<br><b>Server:</b> <a href="https://www.ascar.us/news">Ascar.us</a></P></div>
-                                <a href="https://drive.google.com/file/d/1rpcL5dzdnoPbxLLbLKPvMg4kXz_QZG8Y/view?usp=sharing" class="downloadbutton">Cavebot</a>
-                                <a href="#" class="downloadbutton">-----</a>
-                              </div>
-          
-                              <div class="cavebotspots">
-                                <p><img src="https://www.tibiawiki.com.br/images/b/b0/Fury.gif" alt="Fury"></p>
-                                    <div class="nomecave"><p>Refil Fury Incheon</p></div>
-                                    <br>
-                                      <div class="descricaocave"><P> <b>Level Required:</b> 300<br><b>Start:</b> Incheon DP <br><b>Vocation:</b> RP<br><b>Require TP Clay:</b> No<br><b>Server:</b> <a href="https://www.ascar.us/news">Ascar.us</a></P></div>
-                                    <a href="https://drive.google.com/file/d/1BXfphdpkQZqYGfj9LQzpZX8d43ThgdIR/view?usp=sharing" class="downloadbutton">Cavebot</a>
-                                    <a href="#" class="downloadbutton">-----</a>
-                                  </div>
-
-                                  <div class="cavebotspots">
-                                    <p><img src="https://www.tibiawiki.com.br/images/1/19/Hydra.gif" alt="Hydra"><img src="https://www.tibiawiki.com.br/images/4/4d/Serpent_Spawn.gif" alt="Serpent Spawn"></p>
-                                        <div class="nomecave"><p>Deep Banuta</p></div>
-                                        <br>
-                                          <div class="descricaocave"><P> <b>Level Required:</b> 300<br><b>Start:</b> Thais Temple <br><b>Vocation:</b> RP<br><b>Require TP Clay:</b> Yes<br><b>Server:</b> <a href="https://www.ascar.us/news">Ascar.us</a></P></div>
-                                        <a href="https://drive.google.com/file/d/1P5bWqe48D0Q4blcShGVIN7K6YiEH1Mm2/view?usp=sharing" class="downloadbutton">Cavebot</a>
-                                        <a href="https://drive.google.com/file/d/19LASlBFoppG7AC3rKk4X8Blfg6SYwC-6/view?usp=sharing" class="downloadbutton">Targeting</a>
-                                      </div>
-
-
-
-    </div>
-    </div>
-    </div>
-  </section>
-  <section id="hud" class="grid-one main-bg section">
-    <div class="main-content grid-one-content">
-      <h2 class="grid-main-heading">HUD</h2>
-      <p class="grid-description">Some HUD Scripts</p>
-      <h3 style=font-size:2rem;margin-left:20px;> Player Information right side:</h3>
-      <br>
-
-        <div class="grid">
-        <div class="code-box3">
-            <img src="img\hud.jpg" alt="HUD" width="360px" height="360px" style="border:solid 1px black;   display: block;
-            margin-left: auto;
-            margin-right: auto;">
-            <br>
-
-            <p>auto 500 dontlist | setpos [$screenright + 10] [$screentop - 35] | displaytext 'Target Information:' | setcolor 255 255 255 <br>
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 55] | displaytext 'Target Name:' | setcolor 255 255 255 <br>
-                auto 500 dontlist | setpos [$screenright + 95] [$screentop - 55] | displaytext '$target.name' | setcolor 010 250 025<br>
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 75] | displaytext 'Target HP: % $target.hppc' | setcolor 255 000 000<br>
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 95] | displaytext 'Target MP: % $target.mppc' | setcolor 0 250 250<br>
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 115] | displaytext '---------------------' | setcolor 255 255 255<br>
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 130] | displaytext 'Player Information:' | setcolor 255 255 255<br>
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 150] | displaytext 'Name:' | setcolor 255 255 255<br>
-                auto 500 dontlist | setpos [$screenright + 55] [$screentop - 150] | displaytext '$name' | setcolor 010 250 025<br>
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 170] | displaytext 'Level:' | setcolor 255 255 255<br>
-                auto 500 dontlist | setpos [$screenright + 55] [$screentop - 170] | displaytext '$level' | setcolor 010 250 025<br>
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 210] | displaytext 'Mana:' | setcolor 255 255 255<br>
-                auto 500 dontlist | setpos [$screenright + 85] [$screentop - 210] | displaytext '( %$mppc )' | setcolor 0 250 250<br>
-                auto 500 dontlist | setpos [$screenright + 55] [$screentop - 210] | displaytext '$mp' | setcolor 0 250 250<br>
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 190] | displaytext 'Health:' | setcolor 255 255 255<br>
-                auto 500 dontlist | setpos [$screenright + 55] [$screentop - 190] | displaytext '$hp' | setcolor 255 0 0<br>
-                auto 500 dontlist | setpos [$screenright + 85] [$screentop - 190] | displaytext '( %$hppc )' | setcolor 255 0 0<br>
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 230] | displaytext 'Speed:' | setcolor 255 255 255<br>
-                auto 500 dontlist | setpos [$screenright + 55] [$screentop - 230] | displaytext '$self.speed' | setcolor 255 153 51 <br>
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 250] | displaytext 'Time Online:' | setcolor 255 255 255<br>
-                auto 500 dontlist | setpos [$screenright + 85] [$screentop - 250] | displaytext '$formattime.$deltatime.' | setcolor 255 153 51 <br>
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 270] | displaytext '---------------------' | setcolor 255 255 255<br>
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 290] | displaytext '---------Level--------' | setcolor 010 250 025<br>
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 310] | displaytext 'Time to Next level:' | setcolor 255 255 255<br>
-                auto 500 dontlist | setpos [$screenright + 125] [$screentop - 310] | displaytext '$formattime.$timetnl' | setcolor 192 192 192<br>
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 330] | displaytext 'Exp to level:' | setcolor 255 255 255<br>
-                auto 500 dontlist | setpos [$screenright + 90] [$screentop - 330] | displaytext '$formatnum.$exptnl' | setcolor 192 192 192<br>
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 350] | displaytext 'Exp p/ hour:' | setcolor 255 255 255<br>
-                auto 500 dontlist | setpos [$screenright + 90] [$screentop - 350] | displaytext '$formatnum.$exph' | setcolor 192 192 192<br>
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 370] | displaytext 'Stamina:' | setcolor 255 255 255<br>
-                auto 500 dontlist | setpos [$screenright + 90] [$screentop - 370] | if [$stamina <= '850'] {setcolor 250 0 0} | else setcolor 150 150 0 | displaytext '$formattime.$stamina' | if [$stamina <= 850] statusmessage 'RECHARGE your stamina!! $formattime.$stamina Remaining!!!' | if [$stamina <= 850] say 'RECHARGE your stamina!! $formattime.$stamina Remaining!!!' | wait 10000<br>
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 390] | displaytext '---------------------' | setcolor 255 255 255<br>
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 410] | displaytext 'Magic lvl:' | setcolor 255 255 255<br>
-                auto 500 dontlist | setpos [$screenright + 110] [$screentop - 410] | displaytext '$formatnum.$skillpc.mlevel / 100 %' | setcolor 255 255 255<br>
-                auto 500 dontlist | setpos [$screenright + 70] [$screentop - 410] | setcolor 010 250 025 | {displaytext $skill.mlevel}<br>
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 430] | displaytext 'Distance:' | setcolor 255 255 255<br>
-                auto 500 dontlist | setpos [$screenright + 110] [$screentop - 430] | displaytext '$formatnum.$skillpc.distance / 100 %' | setcolor 255 255 255<br>
-                auto 500 dontlist | setpos [$screenright + 70] [$screentop - 430] | setcolor 010 250 025 |if [$formattime.$skilltime.club == 99:99:99] {displaytext $skill.distance}<br>
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 450] | displaytext 'Shielding:' | setcolor 255 255 255<br>
-                auto 500 dontlist | setpos [$screenright + 110] [$screentop - 450] | displaytext '$formatnum.$skillpc.shielding / 100 %' | setcolor 255 255 255<br>
-                auto 500 dontlist | setpos [$screenright + 70] [$screentop - 450] | setcolor 010 250 025 |if [$formattime.$skilltime.club == 99:99:99] {displaytext $skill.shielding}"</p>
-
-        </div>
-        </div>
-
-        
-    </div>
-  </section>
-  <section id="download" class="intro main-bg section">
-    <div class="main-content intro-content">
-      <div class="intro-text-content">
-        <h2>Downloads</h2>
-        
-        <p > <b style=font-size:3rem;>⚠ Warning</b><br> We are not the owners of these programs, download at own risk.</p>
-        <br>
-            <div class="botoes">
-              <ul>
-                <li><a href="https://mega.nz/file/i9ll0SIA#Hl0x9RLTyei-DKIAv-Uxxr4yIZnHWzyYRlIZGzR_Nvc" target="_blank"><b>Elfbot</b></a></li>
-              <br>
-              <li><a href="https://mega.nz/file/elsRmQZb#acsQ5d-4niliOOyX2q8VGBoD37JVIVpwmfJGz0Z3CNY" target="_blank"><b>Crack</b></a></li>
-              <br>
-              <li><a href="https://mega.nz/file/mok3xATA#XMmJVlJh1RXFImSqWYTkqG_y--QI1o0UPKNF9HxCQPY" target="_blank"><b>Windows 10 Fix</b></a></li>
-                <br>
-            </ul>
-              *If you are using Windows 10, use this file to replace the old elfbot.dll file in your ElfBot folder in order to make hotkeys like Shift + F11 or Shift + F12 function properly again.
-              <br>
-              <br>
-              <p style="border:2px solid #454545;border-radius:5px;padding:15px"> <b style="color:rgb(143, 0, 0);font-size: 28px;">⚠</b> Those files may accuse false-positive in your anti-virus, please disable it temporary. 
-              </p>
+            <div class="nomecave">
+              <p> 100% AFK DL Vesuvia</p>
             </div>
+            <table class="tg">
+              <thead>
+                <tr>
+                  <th class="tg-0lax">Level Required:</th>
+                  <th class="tg-rorx">100</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="tg-0lax">Start:</td>
+                  <td class="tg-0lax">Thais Temple</td>
+                </tr>
+                <tr>
+                  <td class="tg-0lax">Vocation:</td>
+                  <td class="tg-0lax">Knight <img src="https://www.tibiawiki.com.br/images/c/c4/Stonecutter_Axe.gif"
+                      width="15px" height="15px"></td>
+                </tr>
+                <tr>
+                  <td class="tg-0lax">Require TP Clay:</td>
+                  <td class="tg-yes">YES</td>
+                </tr>
+                <tr>
+                  <td class="tg-0lax">Server:</td>
+                  <td class="tg-0lax"><a href="https://ascar.us/" target="_blank" rel="noopener noreferrer">Ascar.us</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <a href="https://drive.google.com/file/d/1X71IRf9cvEcsgFBveQPKT7Mg0VbW8L-6/view?usp=sharing"
+              class="downloadbutton">Cavebot</a>
+            <a href="https://drive.google.com/file/d/1RdCfiHX1sL0omTSfWFc3zERHAMXudtP9/view?usp=sharing"
+              class="downloadbutton">Targeting</a>
           </div>
-      <div class="intro-img2">
-        <img src="img/download2.svg" alt="Download Elfbot with Crack">
-    </div>
-  </section>
-  <footer class="footer">
-    <div align:center; class="footer-content">
+
+          <div class="cavebotspots">
+            <p><img src="https://www.tibiawiki.com.br/images/1/16/Grim_Reaper.gif" alt="Grim Reaper"></p>
+            <div class="nomecave">
+              <p>100% AFK GR Asylium</p>
+            </div>
+            <table class="tg">
+              <thead>
+                <tr>
+                  <th class="tg-0lax">Level Required:</th>
+                  <th class="tg-rorx">300</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="tg-0lax">Start:</td>
+                  <td class="tg-0lax">Asylium Pot Store</td>
+                </tr>
+                <tr>
+                  <td class="tg-0lax">Vocation:</td>
+                  <td class="tg-0lax">Knight <img src="https://www.tibiawiki.com.br/images/c/c4/Stonecutter_Axe.gif"
+                      width="15px" height="15px"></td>
+                </tr>
+                <tr>
+                  <td class="tg-0lax">Require TP Clay:</td>
+                  <td class="tg-no">NO</td>
+                </tr>
+                <tr>
+                  <td class="tg-0lax">Server:</td>
+                  <td class="tg-0lax"><a href="https://ascar.us/" target="_blank" rel="noopener noreferrer">Ascar.us</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <a href="https://drive.google.com/file/d/1CbkphSoSJEjdqfoCsRCTb5lYIGLVf1Y7/view?usp=sharing"
+              class="downloadbutton">Cavebot</a>
+            <a href="https://drive.google.com/file/d/1Yarx09-raX0yQf5gVSMmt3JXpdQFzmvY/view?usp=sharing"
+              class="downloadbutton">Targeting</a>
+          </div>
+
+          <div class="cavebotspots">
+            <p><img src="https://www.tibiawiki.com.br/images/b/ba/Dawnfire_Asura.gif" alt="Asura"></p>
+            <div class="nomecave">
+              <p>100% AFK Asura</p>
+            </div>
+            <table class="tg">
+              <thead>
+                <tr>
+                  <th class="tg-0lax">Level Required:</th>
+                  <th class="tg-rorx">350</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="tg-0lax">Start:</td>
+                  <td class="tg-0lax">Thais Temple</td>
+                </tr>
+                <tr>
+                  <td class="tg-0lax">Vocation:</td>
+                  <td class="tg-0lax">Paladin <img src="https://www.tibiawiki.com.br/images/0/0b/Arbalest.gif"
+                      width="15px" height="15px"></td>
+                </tr>
+                <tr>
+                  <td class="tg-0lax">Require TP Clay:</td>
+                  <td class="tg-yes">YES</td>
+                </tr>
+                <tr>
+                  <td class="tg-0lax">Server:</td>
+                  <td class="tg-0lax"><a href="https://ascar.us/" target="_blank" rel="noopener noreferrer">Ascar.us</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <a href="https://drive.google.com/file/d/1Cprv7Q-Xum4CjjeIp9ziyKi-4cYonUlZ/view?usp=sharing"
+              class="downloadbutton">Cavebot</a>
+            <a href="https://drive.google.com/file/d/1HrP_pn4sqPTc4dV-y8fe2jLLKSwjhUTt/view?usp=sharing"
+              class="downloadbutton">Targeting</a>
+          </div>
+
+          <div class="cavebotspots">
+            <p><img src="https://www.tibiawiki.com.br/images/2/28/Sea_Serpent.gif" alt="Makara"></p>
+            <div class="nomecave">
+              <p>100% AFK Makaras</p>
+            </div>
+            <table class="tg">
+              <thead>
+                <tr>
+                  <th class="tg-0lax">Level Required:</th>
+                  <th class="tg-rorx">300</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="tg-0lax">Start:</td>
+                  <td class="tg-0lax">Thais Temple</td>
+                </tr>
+                <tr>
+                  <td class="tg-0lax">Vocation:</td>
+                  <td class="tg-0lax">Knight <img src="https://www.tibiawiki.com.br/images/c/c4/Stonecutter_Axe.gif"
+                      width="15px" height="15px"></td>
+                </tr>
+                <tr>
+                  <td class="tg-0lax">Require TP Clay:</td>
+                  <td class="tg-no">NO</td>
+                </tr>
+                <tr>
+                  <td class="tg-0lax">Server:</td>
+                  <td class="tg-0lax"><a href="https://ascar.us/" target="_blank" rel="noopener noreferrer">Ascar.us</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <a href="https://drive.google.com/file/d/1iKNtmbkFwxTI25Ar4aj5Uf07GjX2Vw9O/view?usp=sharing"
+              class="downloadbutton">Cavebot</a>
+            <a href="https://drive.google.com/file/d/1mzfACbfr_ukk4H01OOkalKPl6cUzSPvN/view?usp=sharing"
+              class="downloadbutton">Targeting</a>
+          </div>
+
+          <div class="cavebotspots">
+            <p><img src="https://www.tibiawiki.com.br/images/b/b0/Fury.gif" alt="Fury"></p>
+            <div class="nomecave">
+              <p>Refil Fury Incheon</p>
+            </div>
+            <table class="tg">
+              <thead>
+                <tr>
+                  <th class="tg-0lax">Level Required:</th>
+                  <th class="tg-rorx">300</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="tg-0lax">Start:</td>
+                  <td class="tg-0lax">Incheon DP</td>
+                </tr>
+                <tr>
+                  <td class="tg-0lax">Vocation:</td>
+                  <td class="tg-0lax">Knight <img src="https://www.tibiawiki.com.br/images/c/c4/Stonecutter_Axe.gif"
+                      width="15px" height="15px"></td>
+                </tr>
+                <tr>
+                  <td class="tg-0lax">Require TP Clay:</td>
+                  <td class="tg-no">NO</td>
+                </tr>
+                <tr>
+                  <td class="tg-0lax">Server:</td>
+                  <td class="tg-0lax"><a href="https://ascar.us/" target="_blank" rel="noopener noreferrer">Ascar.us</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <a href="https://drive.google.com/file/d/1rpcL5dzdnoPbxLLbLKPvMg4kXz_QZG8Y/view?usp=sharing"
+              class="downloadbutton">Cavebot</a>
+            <a href="#" class="downloadbutton">-----</a>
+          </div>
+
+          <div class="cavebotspots">
+            <p><img src="https://www.tibiawiki.com.br/images/b/b0/Fury.gif" alt="Fury"></p>
+            <div class="nomecave">
+              <p>Refil Fury Incheon</p>
+            </div>
+            <table class="tg">
+              <thead>
+                <tr>
+                  <th class="tg-0lax">Level Required:</th>
+                  <th class="tg-rorx">300</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="tg-0lax">Start:</td>
+                  <td class="tg-0lax">Incheon DP</td>
+                </tr>
+                <tr>
+                  <td class="tg-0lax">Vocation:</td>
+                  <td class="tg-0lax">Paladin <img src="https://www.tibiawiki.com.br/images/0/0b/Arbalest.gif"
+                      width="15px" height="15px"></td>
+                </tr>
+                <tr>
+                  <td class="tg-0lax">Require TP Clay:</td>
+                  <td class="tg-no">NO</td>
+                </tr>
+                <tr>
+                  <td class="tg-0lax">Server:</td>
+                  <td class="tg-0lax"><a href="https://ascar.us/" target="_blank" rel="noopener noreferrer">Ascar.us</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <a href="https://drive.google.com/file/d/1BXfphdpkQZqYGfj9LQzpZX8d43ThgdIR/view?usp=sharing"
+              class="downloadbutton">Cavebot</a>
+            <a href="#" class="downloadbutton">-----</a>
+          </div>
+
+          <div class="cavebotspots">
+            <p><img src="https://www.tibiawiki.com.br/images/1/19/Hydra.gif" alt="Hydra"><img
+                src="https://www.tibiawiki.com.br/images/4/4d/Serpent_Spawn.gif" alt="Serpent Spawn"></p>
+            <div class="nomecave">
+              <p>Deep Banuta</p>
+            </div>
+            <table class="tg">
+              <thead>
+                <tr>
+                  <th class="tg-0lax">Level Required:</th>
+                  <th class="tg-rorx">300</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="tg-0lax">Start:</td>
+                  <td class="tg-0lax">Thais Temple</td>
+                </tr>
+                <tr>
+                  <td class="tg-0lax">Vocation:</td>
+                  <td class="tg-0lax">Paladin <img src="https://www.tibiawiki.com.br/images/0/0b/Arbalest.gif"
+                      width="15px" height="15px"></td>
+                </tr>
+                <tr>
+                  <td class="tg-0lax">Require TP Clay:</td>
+                  <td class="tg-yes">YES</td>
+                </tr>
+                <tr>
+                  <td class="tg-0lax">Server:</td>
+                  <td class="tg-0lax"><a href="https://ascar.us/" target="_blank" rel="noopener noreferrer">Ascar.us</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <a href="https://drive.google.com/file/d/1P5bWqe48D0Q4blcShGVIN7K6YiEH1Mm2/view?usp=sharing"
+              class="downloadbutton">Cavebot</a>
+            <a href="https://drive.google.com/file/d/19LASlBFoppG7AC3rKk4X8Blfg6SYwC-6/view?usp=sharing"
+              class="downloadbutton">Targeting</a>
+          </div>
+
+
+
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section id="hud" class="grid-one main-bg section">
+      <div class="main-content grid-one-content">
+        <h2 class="grid-main-heading">HUD</h2>
+        <p class="grid-description">Some HUD Scripts</p>
+        <h3 style=font-size:2rem;margin-left:0px;> Player Information right side </h3>
+
+        <br>
+        <div>
+          <img src="img/hud.png" alt="hud" width=200px height=400px>
+
+          <div id="hud2">
+
+            <pre><code class="language-lua">          
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 35] | displaytext 'Target Information:' | setcolor 255 255 255 
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 55] | displaytext 'Target Name:' | setcolor 255 255 255 
+                auto 500 dontlist | setpos [$screenright + 95] [$screentop - 55] | displaytext '$target.name' | setcolor 010 250 025
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 75] | displaytext 'Target HP: % $target.hppc' | setcolor 255 000 000
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 95] | displaytext 'Target MP: % $target.mppc' | setcolor 0 250 250
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 115] | displaytext '---------------------' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 130] | displaytext 'Player Information:' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 150] | displaytext 'Name:' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 55] [$screentop - 150] | displaytext '$name' | setcolor 010 250 025
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 170] | displaytext 'Level:' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 55] [$screentop - 170] | displaytext '$level' | setcolor 010 250 025
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 210] | displaytext 'Mana:' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 85] [$screentop - 210] | displaytext '( %$mppc )' | setcolor 0 250 250
+                auto 500 dontlist | setpos [$screenright + 55] [$screentop - 210] | displaytext '$mp' | setcolor 0 250 250<
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 190] | displaytext 'Health:' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 55] [$screentop - 190] | displaytext '$hp' | setcolor 255 0 0
+                auto 500 dontlist | setpos [$screenright + 85] [$screentop - 190] | displaytext '( %$hppc )' | setcolor 255 0 0
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 230] | displaytext 'Speed:' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 55] [$screentop - 230] | displaytext '$self.speed' | setcolor 255 153 51 
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 250] | displaytext 'Time Online:' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 85] [$screentop - 250] | displaytext '$formattime.$deltatime.' | setcolor 255 153 51 
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 270] | displaytext '---------------------' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 290] | displaytext '---------Level--------' | setcolor 010 250 025
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 310] | displaytext 'Time to Next level:' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 125] [$screentop - 310] | displaytext '$formattime.$timetnl' | setcolor 192 192 192
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 330] | displaytext 'Exp to level:' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 90] [$screentop - 330] | displaytext '$formatnum.$exptnl' | setcolor 192 192 192
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 350] | displaytext 'Exp p/ hour:' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 90] [$screentop - 350] | displaytext '$formatnum.$exph' | setcolor 192 192 192
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 370] | displaytext 'Stamina:' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 90] [$screentop - 370] | if [$stamina <= '850'] {setcolor 250 0 0} | else setcolor 150 150 0 | displaytext '$formattime.$stamina' | if [$stamina <= 850] statusmessage 'RECHARGE your stamina!! $formattime.$stamina Remaining!!!' |if [$stamina <= 850] say 'RECHARGE your stamina!! $formattime.$stamina Remaining!!!' | wait 10000
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 390] | displaytext '---------------------' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 410] | displaytext 'Magic lvl:' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 110] [$screentop - 410] | displaytext '$formatnum.$skillpc.mlevel / 100 %' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 70] [$screentop - 410] | setcolor 010 250 025 | {displaytext $skill.mlevel}
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 430] | displaytext 'Distance:' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 110] [$screentop - 430] | displaytext '$formatnum.$skillpc.axe / 100 %' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 70] [$screentop - 430] | setcolor 010 250 025 |if [$formattime.$skilltime.club == 99:99:99] {displaytext $skill.axe}
+                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 450] | displaytext 'Shielding:' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 110] [$screentop - 450] | displaytext '$formatnum.$skillpc.shielding / 100 %' | setcolor 255 255 255
+                auto 500 dontlist | setpos [$screenright + 70] [$screentop - 450] | setcolor 010 250 025 |if [$formattime.$skilltime.club == 99:99:99] {displaytext $skill.shielding}"</code></pre>
+          </div>
+
+          <button id="downbutton" onclick="CopyToClipboard('hud2')">Copy Code</button>
+        </div>
+      </div>
+      </div>
+      </div>
+    </section>
+
+
+    <section id="download" class="intro main-bg section">
+      <div class="main-content intro-content">
+        <div class="intro-text-content">
+          <h2>Downloads</h2>
+
+          <p> <b style=font-size:3rem;>⚠ Warning</b><br> We are not the owners of these programs, download at own risk.
+          </p>
+          <br>
+          <div class="botoes">
+            <ul>
+              <li><a href="https://mega.nz/file/i9ll0SIA#Hl0x9RLTyei-DKIAv-Uxxr4yIZnHWzyYRlIZGzR_Nvc"
+                  target="_blank"><b>Elfbot</b></a></li>
+              <br>
+              <li><a href="https://mega.nz/file/elsRmQZb#acsQ5d-4niliOOyX2q8VGBoD37JVIVpwmfJGz0Z3CNY"
+                  target="_blank"><b>Crack</b></a></li>
+              <br>
+              <li><a href="https://mega.nz/file/mok3xATA#XMmJVlJh1RXFImSqWYTkqG_y--QI1o0UPKNF9HxCQPY"
+                  target="_blank"><b>Windows 10 Fix</b></a></li>
+              <br>
+            </ul>
+            *If you are using Windows 10, use this file to replace the old elfbot.dll file in your ElfBot folder in
+            order to make hotkeys like Shift + F11 or Shift + F12 function properly again.
+            <br>
+            <br>
+            <p style="border:2px solid #454545;border-radius:5px;padding:15px"> <b
+                style="color:rgb(143, 0, 0);font-size: 28px;">⚠</b> Those files may accuse false-positive in your
+              anti-virus, please disable it temporary.
+            </p>
+          </div>
+        </div>
+        <div class="intro-img2">
+          <img src="img/download2.svg" alt="Download Elfbot with Crack">
+        </div>
+    </section>
+    <footer class="footer">
+      <div align:center; class="footer-content">
         <h6 style=font-size:1.5rem;position:absolut;>
-            <p>This is a simple website developed just for study.
-             Feel Free to use all scripts containing in here.</p>
-                Code by Victor Schiavinato.<br>
-                Visitors Counter:
-           
-             <!-- hitwebcounter Code START -->
-    <a href="https://www.hitwebcounter.com" target="_blank">
-        <img src="https://hitwebcounter.com/counter/counter.php?page=7882708&style=0029&nbdigits=3&type=ip&initCount=0" title="Free Counter" Alt="web counter"   border="0" /></a>                                    
-            </h6>
-    </div>
-  </footer>                      
+          <p>This is a simple website developed just for study.
+            Feel Free to use all scripts containing in here.</p>
+          Code by Victor Schiavinato.<br>
+          Visitors Counter:
+
+          <!-- hitwebcounter Code START -->
+          <a href="https://www.hitwebcounter.com" target="_blank">
+            <img
+              src="https://hitwebcounter.com/counter/counter.php?page=7882708&style=0029&nbdigits=3&type=ip&initCount=0"
+              title="Free Counter" Alt="web counter" border="0" /></a>
+        </h6>
+      </div>
+    </footer>
 </body>
-</html> 
+
+</html>
