@@ -37,6 +37,7 @@
       }
     }
   </script>
+
 </head>
 
 <body class="main-bg">
@@ -167,6 +168,17 @@
             auto 500 if [$mppc >90] say 'Exori gran'      </code> </pre>
 
         <br>
+        <p>Attack Monster and Follow Friend</p>
+        <pre><code class="language-lua">
+          auto 100 isnottargeting {if [$followed.name != 'FRIENDNAME'] follow 'FRIENDNAME'      </code> </pre>
+
+        <br>
+        <p>Enchant Rainbow Shield</p>
+        <pre><code class="language-lua">
+          auto 200 listas "Rainbow Enchant" | if [$itemcount.8077== 1] { useoninventoryitem 677 8077}      </code> </pre>
+
+        <br>
+
       </div>
     </section>
     <section id="cavebot" class="grid-one main-bg section">
@@ -175,7 +187,7 @@
         <p class="grid-description">Some useful cavebots scripts.</p>
 
         <div class="grid">
-          <article>
+          <article class="box">
 
             <h3>NPC Talk Travel</h3> <button id="downbutton2" onclick="CopyToClipboard('cave1')">Copy Code</button>
             <div class="code-box2" id="cave1">
@@ -188,7 +200,7 @@
 
             </div>
           </article>
-          <article>
+          <article class="box">
             <h3>NPC Buy Potions</h3> <button id="downbutton2" onclick="CopyToClipboard('cave2')">Copy Code</button>
             <div class="code-box2" id="cave2">
               <pre><code class="language-lua">
@@ -209,7 +221,7 @@
               </div>
             </div>
           </article>
-          <article>
+          <article class="box">
             <h3>NPC Sell Loot</h3> <button id="downbutton2" onclick="CopyToClipboard('cave3')">Copy Code</button>
             <div class="code-box2" id="cave3">
               <pre><code class="language-lua">
@@ -224,7 +236,7 @@
               </div>
             </div>
           </article>
-          <article>
+          <article class="box">
             <h3>Check Potions</h3> <button id="downbutton2" onclick="CopyToClipboard('cave4')">Copy Code</button>
             <div class="code-box2" id="cave4">
               <pre><code class="language-lua">
@@ -237,7 +249,7 @@
               </div>
             </div>
           </article>
-          <article>
+          <article class="box">
             <h3>Check Cap</h3> <button id="downbutton2" onclick="CopyToClipboard('cave5')">Copy Code</button>
             <div class="code-box2" id="cave5">
               <pre><code class="language-lua">
@@ -245,7 +257,7 @@
           </code></pre>
             </div>
           </article>
-          <article>
+          <article class="box">
             <h3>Check Pot & Cap</h3> <button id="downbutton2" onclick="CopyToClipboard('cave6')">Copy Code</button>
             <div class="code-box2" id="cave6">
               <pre><code class="language-lua"><p>
@@ -258,7 +270,7 @@
               </div>
             </div>
           </article>
-          <article>
+          <article class="box">
             <h3>Check SD</h3> <button id="downbutton2" onclick="CopyToClipboard('cave7')">Copy Code</button>
             <div class="code-box2" id="cave7">
               <pre><code class="language-lua">
@@ -267,7 +279,7 @@
           else {gotolabel hunt}</p></code></pre>
             </div>
           </article>
-          <article>
+          <article class="box">
             <h3>Open BP</h3> <button id="downbutton2" onclick="CopyToClipboard('cave8')">Copy Code</button>
             <div class="code-box2" id="cave8">
               <pre><code class="language-lua">
@@ -282,7 +294,7 @@
               </div>
             </div>
           </article>
-          <article>
+          <article class="box">
             <h3>Move Potions to BP</h3> <button id="downbutton2" onclick="CopyToClipboard('cave9')">Copy Code</button>
             <div class="code-box2" id="cave9">
               <pre><code class="language-lua">
@@ -300,7 +312,8 @@
         <div class="cavebotfiles" id="cavebotfiles" style="padding-top:100px">
           <h2>Cavebots files</h2>
           <h3 style="font-size: 2rem;">Here you can download some samples of 100% AFK scripts!</h3><br>
-          <h3 style="font-size: 1.5rem;color:brown">⚠ Some scripts may need waypoints updates, read the labels inside.</h3>
+          <h3 style="font-size: 1.5rem;color:brown">⚠ Some scripts may need waypoints updates, read the labels inside.
+          </h3>
 
 
 
@@ -341,7 +354,6 @@
               class="downloadbutton">Cavebot</a>
             <a href="https://drive.google.com/file/d/1a_altijrMgGjRLmrMD5nwXwzgjv5uvAP/view?usp=sharing"
               class="downloadbutton">Targeting</a>
-
           </div>
 
           <div class="cavebotspots">
@@ -592,7 +604,7 @@
               <tbody>
                 <tr>
                   <td class="tg-0lax">Start:</td>
-                  <td class="tg-0lax">Thais Temple</td>
+                  <td class="tg-0lax">Banuta Last floor</td>
                 </tr>
                 <tr>
                   <td class="tg-0lax">Vocation:</td>
@@ -631,60 +643,21 @@
 
         <br>
         <div>
-          <img src="img/hud.png" alt="hud" width=200px height=400px>
-
-          <div id="hud2">
-
-            <pre><code class="language-lua">          
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 35] | displaytext 'Target Information:' | setcolor 255 255 255 
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 55] | displaytext 'Target Name:' | setcolor 255 255 255 
-                auto 500 dontlist | setpos [$screenright + 95] [$screentop - 55] | displaytext '$target.name' | setcolor 010 250 025
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 75] | displaytext 'Target HP: % $target.hppc' | setcolor 255 000 000
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 95] | displaytext 'Target MP: % $target.mppc' | setcolor 0 250 250
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 115] | displaytext '---------------------' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 130] | displaytext 'Player Information:' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 150] | displaytext 'Name:' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 55] [$screentop - 150] | displaytext '$name' | setcolor 010 250 025
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 170] | displaytext 'Level:' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 55] [$screentop - 170] | displaytext '$level' | setcolor 010 250 025
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 210] | displaytext 'Mana:' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 85] [$screentop - 210] | displaytext '( %$mppc )' | setcolor 0 250 250
-                auto 500 dontlist | setpos [$screenright + 55] [$screentop - 210] | displaytext '$mp' | setcolor 0 250 250<
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 190] | displaytext 'Health:' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 55] [$screentop - 190] | displaytext '$hp' | setcolor 255 0 0
-                auto 500 dontlist | setpos [$screenright + 85] [$screentop - 190] | displaytext '( %$hppc )' | setcolor 255 0 0
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 230] | displaytext 'Speed:' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 55] [$screentop - 230] | displaytext '$self.speed' | setcolor 255 153 51 
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 250] | displaytext 'Time Online:' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 85] [$screentop - 250] | displaytext '$formattime.$deltatime.' | setcolor 255 153 51 
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 270] | displaytext '---------------------' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 290] | displaytext '---------Level--------' | setcolor 010 250 025
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 310] | displaytext 'Time to Next level:' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 125] [$screentop - 310] | displaytext '$formattime.$timetnl' | setcolor 192 192 192
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 330] | displaytext 'Exp to level:' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 90] [$screentop - 330] | displaytext '$formatnum.$exptnl' | setcolor 192 192 192
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 350] | displaytext 'Exp p/ hour:' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 90] [$screentop - 350] | displaytext '$formatnum.$exph' | setcolor 192 192 192
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 370] | displaytext 'Stamina:' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 90] [$screentop - 370] | if [$stamina <= '850'] {setcolor 250 0 0} | else setcolor 150 150 0 | displaytext '$formattime.$stamina' | if [$stamina <= 850] statusmessage 'RECHARGE your stamina!! $formattime.$stamina Remaining!!!' |if [$stamina <= 850] say 'RECHARGE your stamina!! $formattime.$stamina Remaining!!!' | wait 10000
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 390] | displaytext '---------------------' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 410] | displaytext 'Magic lvl:' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 110] [$screentop - 410] | displaytext '$formatnum.$skillpc.mlevel / 100 %' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 70] [$screentop - 410] | setcolor 010 250 025 | {displaytext $skill.mlevel}
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 430] | displaytext 'Distance:' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 110] [$screentop - 430] | displaytext '$formatnum.$skillpc.axe / 100 %' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 70] [$screentop - 430] | setcolor 010 250 025 |if [$formattime.$skilltime.club == 99:99:99] {displaytext $skill.axe}
-                auto 500 dontlist | setpos [$screenright + 10] [$screentop - 450] | displaytext 'Shielding:' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 110] [$screentop - 450] | displaytext '$formatnum.$skillpc.shielding / 100 %' | setcolor 255 255 255
-                auto 500 dontlist | setpos [$screenright + 70] [$screentop - 450] | setcolor 010 250 025 |if [$formattime.$skilltime.club == 99:99:99] {displaytext $skill.shielding}"</code></pre>
-          </div>
-
-          <button id="downbutton" onclick="CopyToClipboard('hud2')">Copy Code</button>
+          <img src="img/hud.png" alt="hud" style="box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);">
+          <ul class="vocation">
+            <li><a href="https://pastebin.com/nKdC9qAM">Knight</a></li>
+            <li><a href="https://pastebin.com/1D83J4mQ">Paladin</a></li>
+            <li><a href="https://pastebin.com/xZuCgGYB">Mage</a></li>
+          </ul>
         </div>
       </div>
       </div>
       </div>
     </section>
+
+
+
+
 
 
     <section id="download" class="intro main-bg section">
@@ -737,6 +710,28 @@
         </h6>
       </div>
     </footer>
+
+    <script>
+
+      const modal = document.querySelector(".modal");
+      const trigger = document.querySelector(".trigger");
+      const closeButton = document.querySelector(".close-button");
+
+      function toggleModal() {
+        modal.classList.toggle("show-modal");
+      }
+
+      function windowOnClick(event) {
+        if (event.target === modal) {
+          toggleModal();
+        }
+      }
+
+      trigger.addEventListener("click", toggleModal);
+      closeButton.addEventListener("click", toggleModal);
+      window.addEventListener("click", windowOnClick);
+    </script>
+
 </body>
 
 </html>
