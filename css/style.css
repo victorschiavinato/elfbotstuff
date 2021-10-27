@@ -122,24 +122,6 @@ a:visited{
 
 }
 
-.footer {
-    width: 100%;
-    height: 220px;
-    background: black;
-    left: 0;
-    bottom: 2000;
-    display: block;
-}
-
-.footer-content{
-    color:white;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    text-align: center;
-    font-family: 'Open Sans', sans-serif; 
-    padding-top: 20px;;
-}
 
 .intro-img2 {
     position:relative;
@@ -365,3 +347,29 @@ code {
   border-radius: 10px;
   box-shadow: inset 0 0 1em rgba(0, 0, 0, .4);
 }
+
+.footer {
+  padding:50px;
+  width: 100%;
+  height: 220px;
+  background:rgba(0, 0, 0, .2);
+  left: 0;
+  bottom: 2000;
+  display: block;
+}
+
+.footer-content{
+  color:white;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif; 
+  padding-top: 20px;;
+}
+
+.contributors {
+  font-size: 16px;
+  list-style-type: none;
+}
+
