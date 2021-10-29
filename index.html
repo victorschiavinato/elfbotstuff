@@ -95,7 +95,7 @@
     auto 100 if [$mppc <= 70] mana self
             </code> </pre>
           <br>
-          
+
           <p>Haste</p>
           <pre><code class="language-lua">
     auto 1000 dontlist | if [$hasted == 0 && $inpz == 0] {say 'utani hur' | wait 1000 }
@@ -140,6 +140,12 @@
             <h6>Only use Hast if you are not in Pz.</h6>
             <br>
 
+            <p>UE Hunt</p>
+            <pre><code class="language-lua">
+    auto 100 if [$playersaround.10 == 0 && $monstersaround.1 >= 2] { istargeting say 'Exevo mas san' } | if [$playersaround.10 >= 1] { istargeting say 'Exori con'}
+              </code> </pre>
+            <br>
+
           <p>Custom Spell Attack</p>
           <pre><code class="language-lua">
     auto 250 isattacking say 'exori gran con'
@@ -161,6 +167,18 @@
           <pre><code class="language-lua">
     auto 100 if [$inpz == 0 && $hasted ==  0]  say 'Utani Gran Hur'
               </code> </pre>
+
+              <p>UE Hunt with Spells</p>
+              <pre><code class="language-lua">
+    auto 100 if [$playersaround.10 == 0 && $monstersaround.2 >= 3] { istargeting say 'Exevo gran mas frigo' } | if [$playersaround.10 >= 1] { istargeting say 'Exori frigo'}
+                </code> </pre>
+              <br>
+
+              <p>UE Hunt with SD</p>
+              <pre><code class="language-lua">
+    auto 100 if [$playersaround.10 == 0 && $monstersaround.2 >= 3] { istargeting say 'Exevo gran mas vis' } | if [$playersaround.10 >= 1] { istargeting sd target}
+                </code> </pre>
+              <br>
 
           <p>Auto SD Target</p>
           <pre><code class="language-lua">
