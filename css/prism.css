@@ -4,7 +4,7 @@ code[class*=language-],pre[class*=language-]{
     color:rgb(151, 151, 151);
     background:0 0;
     text-shadow:0 -.1em .2em rgb(0, 0, 0);
-    font-size: 16px;
+    font-size: 14px;
     text-align:left;
     white-space:pre;
     word-spacing:normal;
@@ -16,18 +16,17 @@ code[class*=language-],pre[class*=language-]{
 }
 @media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}
 :not(pre)>code[class*=language-],pre[class*=language-]{
-    background:#1a1a1a;
-    border:1px dashed #dcdcdc;
+    background: rgba(0,0,0, .3);
+    border:1px dashed #3a3a3a;
     border-radius: 5px;
     width: 1200px;
     max-width: 100%;
     overflow: auto;
 }
     pre[class*=language-]{
-        padding:1em;
+        padding:5px 1px 1px 1px;
         margin:.5em 0;}
         :not(pre)>code[class*=language-]{
-            padding:.15em .2em .05em; 
             border-radius:.3em;
             border:.13em solid #1a1a1a;
             box-shadow:1px 1px .3em -.1em #000 inset;
