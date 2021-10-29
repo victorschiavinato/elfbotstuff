@@ -18,12 +18,11 @@
     height: auto;
   }
   .top3-content {
-    max-width: 100rem;
+    max-width: 110rem;
     display: block;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
-    height: 100vh;
     min-height: 100vh;
     text-align: center;
     overflow: auto;
@@ -224,12 +223,9 @@ a:visited{
   background-color:rgb(44, 44, 44);
 }
 
-code {
+code, pre {
   padding: 0;
-  text-align: center;
-  position:relative;
-  left:-90px;
-  top:-20px;
+  margin: 0;
 }
 
 
@@ -371,5 +367,56 @@ code {
 .contributors {
   font-size: 16px;
   list-style-type: none;
+}
+
+
+.tab {
+  overflow-x: auto;
+  background: rgba(0, 0, 0, .4);
+  box-shadow: inset 0 0 1em rgba(0, 0, 0, .4);
+  border-radius: 10px 10px 0px 0px;
+  
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+
+  background: transparent;
+  border:none;
+  font-size: 18px;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  color:#752614;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  color:#ff502a;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  color:#ff502a;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border-top: none;
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+  box-shadow: inset 0 0 1em rgba(0, 0, 0, .4);
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+#hotkeys h6 {
+  color:rgb(82, 82, 82);
 }
 
