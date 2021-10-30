@@ -12,6 +12,15 @@
     flex-flow: column wrap;
     justify-content: center;
   }
+
+  .intro-text-content2 {
+    display: block;
+  }
+  .intro-content2 {
+    display: block;
+    min-height: 100vh;
+  }
+
   .intro-img img,
   .intro-img svg {
     max-width: 100%;
@@ -184,32 +193,25 @@ a:visited{
 
 .botoes ul {
   list-style-type: none;
-  margin-left: 20px;
   text-align: center;
-  
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .botoes ul li {
-  line-height: 50px;
-  width: 70%;
-  background:rgb(29, 29, 29);
+  width: 150px;
   color: white;
   border-radius: 3px;
-  padding: 3px;
-  box-shadow: 5px 5px 5px #000;
 }
 .botoes ul li a{
-  line-height: 50px;
-  width: 70%;
-  background:rgb(29, 29, 29);
+  border:1px solid white;
+  background:rgba(0, 0, 0, 0.4);
+  width: 150px;
   color: white;
   border-radius: 3px;
-  padding: 3px;
+  padding: 20px;
+}
 
-}
-.botoes ul li:hover{
-  text-decoration: underline;
-}
 
 .botaohud
 {
@@ -420,3 +422,53 @@ code, pre {
   color:rgb(82, 82, 82);
 }
 
+.tab2 {
+  float: left;
+  width: 200px;
+  height: 300px;
+  overflow-x: auto;
+  background: rgba(0, 0, 0, .2);
+  box-shadow: inset 0 0 1em rgba(0, 0, 0, .4);
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab2 button {
+  display: block;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align:center;
+  cursor: pointer;
+  background: transparent;
+  border:none;
+  font-size: 18px;
+  transition: 0.3s;
+  color:#752614;
+}
+
+/* Change background color of buttons on hover */
+.tab2 button:hover {
+  color:#ff502a;
+}
+
+/* Create an active/current "tab button" class */
+.tab2 button.active {
+  color:#ff502a;
+}
+
+/* Style the tab content */
+.tabcontents {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  border-left: none;
+  height: auto;
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+  box-shadow: inset 0 0 1em rgba(0, 0, 0, .4);
+}
+
+.contenttab {
+
+text-align: center;
+}
